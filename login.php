@@ -14,7 +14,7 @@ include "login.html";
     }
 	  $check=false;
    
-echo   $stmt1 ="Select * from register where username=".$_POST['username']. " && password=".$_POST['password'].";";
+echo   $stmt1 ="Select * from register;" ;
  if($prp1 = $conn->query($stmt1))
  {
 $registrant1 = $prp1->fetch();
