@@ -1,5 +1,6 @@
 <pre>
 <?php
+include "registration.html";
 error_reporting(E_ALL); // or E_STRICT
 ini_set("display_errors",1);
 //ini_set("memory_limit","1024M");
