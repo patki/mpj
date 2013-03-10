@@ -17,13 +17,17 @@
         $username = $_POST['name'];
         $email = $_POST['email'];
         $password = $_POST['password'];
+		$department=$_POST['department'];
+		$studentid=$_POST['studentid'];
         // Insert data
-        $sql_insert = "INSERT INTO register (username, email, password) 
-                   VALUES (?,?,?)";
+        $sql_insert = "INSERT INTO register (username, email, password,department,studentid) 
+                   VALUES (?,?,?,?,?)";
         $stmt = $conn->prepare($sql_insert);
         $stmt->bindValue(1, $username);
         $stmt->bindValue(2, $email);
         $stmt->bindValue(3, $password);
+		$stmt->bindValue(4, $department);
+		$stmt->bindValue(5, $studentid);
         $stmt->execute();
     }
     catch(Exception $e) {
@@ -45,7 +49,8 @@
         foreach($registrants as $registrant) {
             echo "<tr><td>".$registrant['username']."</td>";
             echo "<td>".$registrant['email']."</td>";
-            echo "<td>".$registrant['password']."</td></tr>";
+            echo "<td>".$registrant['department']."</td>";
+			 echo "<td>".$registrant['studentid']."</td></tr>";
         }
         echo "</table>";
     } else {
