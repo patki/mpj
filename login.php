@@ -14,10 +14,12 @@ include "login.html";
     }
 	  $check=false;
    
-echo   $stmt1 ="Select * from register;" ;
- if($prp1 = $conn->query($stmt1))
- {
-$registrant1 = $prp1->fetch();
+ $sql_select = "SELECT * FROM register where username=".$_POST['usename']. " and password=".$_POST['password'].";";
+    $stmt = $conn->query($sql_select);
+    $registrants = $stmt->fetchAll(); 
+ if(count($registrants) > 0) {
+        echo "<h2>People who are registered:</h2>";
+		
     // print_r($registrant1);
      if(count($registrant1) ==1)
       {
@@ -29,6 +31,4 @@ $registrant1 = $prp1->fetch();
 			  
 		}
  }
- else
- die("couldnt connect....");
 ?>
