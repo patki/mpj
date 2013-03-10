@@ -23,6 +23,12 @@ include "login.html";
      if(count($registrants) ==1)
       {
 		echo "signed inn!!" ;
+		
+		echo .$registrant['username']."<br>";
+            echo .$registrant['email']."<br>";
+            echo .$registrant['department']."<br>";
+			 echo .$registrant['studentid']."<br>";
+		
 	  }
 		  else
 		  {
