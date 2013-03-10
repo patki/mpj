@@ -20,7 +20,7 @@
         $password = $_POST['password'];
 		 $studentid = $_POST['studentid'];
 		  $department = $_POST['department'];
-		  //  $pic = $_POST['pic'];
+		  
         // Insert data
         $sql_insert = "INSERT INTO register (username, email, password,studentid,department) 
                    VALUES (?,?,?,?,?)";
@@ -30,7 +30,7 @@
         $stmt->bindValue(3, $password);
 		$stmt->bindValue(4, $studentid);
 		$stmt->bindValue(5, $department);
-		//$stmt->bindValue(6, $pic);
+		
         $stmt->execute();
     }
     catch(Exception $e) {
@@ -50,10 +50,10 @@
         echo "<th>department</th>";
         echo "<th>studentid</th></tr>";
         foreach($registrants as $registrant) {
-            echo "<tr><td>".$registrant['username']."</td>";
-            echo "<td>".$registrant['email']."</td>";
-            echo "<td>".$registrant['department']."</td>";
-			 echo "<td>".$registrant['studentid']."</td></tr>";
+            echo "<tr><td>".$registrant['username']."</td><br>";
+            echo "<td>".$registrant['email']."</td><br>";
+            echo "<td>".$registrant['department']."</td><br>";
+			 echo "<td>".$registrant['studentid']."</td><br></tr>";
         }
         echo "</table>";
       
