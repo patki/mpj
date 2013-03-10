@@ -14,10 +14,11 @@
 	  $check=false;
    
 echo   $stmt1 ="Select * from register where username=".$_POST['username']. " && password=".$_POST['password'].";";
- $prp1 = $conn->query($stmt1);
+ if($prp1 = $conn->query($stmt1))
+ {
 $registrant1 = $prp1->fetch();
     // print_r($registrant1);
-     if(count($registrant1) >0)
+     if(count($registrant1) ==1)
       {
 		echo "signed inn!!" ;
 	  }
@@ -26,5 +27,7 @@ $registrant1 = $prp1->fetch();
 			 echo "error ";
 			  
 		}
-
+ }
+ else
+ die("couldnt connect....");
 ?>
