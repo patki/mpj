@@ -17,21 +17,23 @@ include "login.html";
    {
   $sql_select = "SELECT * FROM register where username='".$_POST['username']. "' and password='".$_POST['password']."';";
     $stmt = $conn->query($sql_select);
-    $registrants = $stmt->fetchAll(); 
+    $registrants = $stmt->fetch(); 
  
     // print_r($registrant1);
      if(count($registrants) ==1)
       {
-		echo "signed inn!!" ;
-		   echo "<tr><td>".$registrant['username']."</td>";
+		 echo "<table>";
+        echo "<tr><th>Name</th>";
+        echo "<th>Email</th>";
+        echo "<th>department</th>";
+        echo "<th>studentid</th></tr>";
+        foreach($registrants as $registrant) {
+            echo "<tr><td>".$registrant['username']."</td>";
             echo "<td>".$registrant['email']."</td>";
             echo "<td>".$registrant['department']."</td>";
 			 echo "<td>".$registrant['studentid']."</td></tr>";
-	  }
-		  else
-		  {
-			 echo "error ";
-			  
+        }
+        echo "</table>";
 		}
  
    }
