@@ -39,7 +39,7 @@
     echo "<h3>Your're registered!</h3>";
     }
  
-    $sql_select = "SELECT * FROM register";
+    $sql_select = "SELECT * FROM register where username=?";
     $stmt = $conn->query($sql_select);
     $registrants = $stmt->fetchAll(); 
     if(count($registrants) > 0) {
@@ -57,7 +57,8 @@
         }
         echo "</table>";
       
-    } {
+    } else
+	{
         echo "<h3>No one is currently registered.</h3>";
     }
 	
