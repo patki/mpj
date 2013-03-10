@@ -14,7 +14,7 @@
     // Insert registration info
     if(!empty($_POST)) {
     try {
-        $username = $_POST['name'];
+        $username = $_POST['username'];
         $email = $_POST['email'];
         $password = $_POST['password'];
 		 $studentid = $_POST['studentid'];
