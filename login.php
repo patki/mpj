@@ -24,9 +24,12 @@ include "login.html";
       {
 		  echo "signed in";
 	  }
-	  else
+	  else  if(count($registrant) ==0)
 	  {
-	  echo "error";
+	  echo "enter values";
+   }
+   else 
+   {echo "error";
    }
    }
 ?>
