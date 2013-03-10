@@ -62,5 +62,10 @@
         echo "<h3>No one is currently registered.</h3>";
     }
 	
+	if ($done)
+{
+    header("Location: http://studentsroom.azurewebsites.net/login.php");
+    exit;
+}
 	
 ?>
