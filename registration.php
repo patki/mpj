@@ -50,10 +50,10 @@
         echo "<th>department</th>";
         echo "<th>studentid</th></tr>";
         foreach($registrants as $registrant) {
-            echo "<tr><td>".$registrant['username']."</td><br>";
-            echo "<td>".$registrant['email']."</td><br>";
-            echo "<td>".$registrant['department']."</td><br>";
-			 echo "<td>".$registrant['studentid']."</td><br></tr>";
+            echo "<tr><td>".$registrant['username']."</td>";
+            echo "<td>".$registrant['email']."</td>";
+            echo "<td>".$registrant['department']."</td>";
+			 echo "<td>".$registrant['studentid']."</td></tr>";
         }
         echo "</table>";
       
