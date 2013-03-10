@@ -17,7 +17,7 @@ include "login.html";
    {
   $sql_select = "SELECT * FROM register where username='".$_POST['username']. "' and password='".$_POST['password']."';";
     $stmt = $conn->query($sql_select);
-    $registrant = $stmt->fetch(); 
+    $registrant = $stmt->fetchAll(); 
  
     // print_r($registrant1);
      if(count($registrant) ==1)
@@ -25,6 +25,8 @@ include "login.html";
 		  echo "signed in";
 	  }
 	  else
+	  {
 	  echo "error";
+   }
    }
 ?>
