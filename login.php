@@ -17,17 +17,13 @@
         $username = $_POST['name'];
         $email = $_POST['email'];
         $password = $_POST['password'];
-		 $studentid = $_POST['studentid'];
-		  $department = $_POST['department'];
         // Insert data
-        $sql_insert = "INSERT INTO register (username, email, password,studentid,depart) 
-                   VALUES (?,?,?,?,?)";
+        $sql_insert = "INSERT INTO register (username, email, password) 
+                   VALUES (?,?,?)";
         $stmt = $conn->prepare($sql_insert);
         $stmt->bindValue(1, $username);
         $stmt->bindValue(2, $email);
         $stmt->bindValue(3, $password);
-		$stmt->bindValue(4, $studentid);
-		$stmt->bindValue(5, $department);
         $stmt->execute();
     }
     catch(Exception $e) {
@@ -41,19 +37,17 @@
     $registrants = $stmt->fetchAll(); 
     if(count($registrants) > 0) {
         echo "<h2>People who are registered:</h2>";
-    
-        echo "Name";
-        echo "Email";
-		echo "studentid";
-		echo "department";
+        echo "<table>";
+        echo "<tr><th>Name</th>";
+        echo "<th>Email</th>";
+        echo "<th>department</th>";
+        echo "<th>studentid</th></tr>";
         foreach($registrants as $registrant) {
-            echo ".$registrant['username'].";
-            echo ".$registrant['email'].";
-            echo ".$registrant['password'].";
-			  echo ".$registrant['studentid'].";
-			    echo ".$registrant['department'].";
+            echo "<tr><td>".$registrant['username']."</td>";
+            echo "<td>".$registrant['email']."</td>";
+            echo "<td>".$registrant['password']."</td></tr>";
         }
-       
+        echo "</table>";
     } else {
         echo "<h3>No one is currently registered.</h3>";
     }

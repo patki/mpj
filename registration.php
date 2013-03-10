@@ -20,7 +20,7 @@
 		 $studentid = $_POST['studentid'];
 		  $department = $_POST['department'];
         // Insert data
-        $sql_insert = "INSERT INTO register (username, email, password,studentid,depart) 
+        $sql_insert = "INSERT INTO register (username, email, password,department,studentid) 
                    VALUES (?,?,?,?,?)";
         $stmt = $conn->prepare($sql_insert);
         $stmt->bindValue(1, $username);
