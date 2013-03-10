@@ -13,13 +13,12 @@ include "login.html";
         die(var_dump($e));
     }
 	  $check=false;
-   
-echo  $sql_select = "SELECT * FROM register where username='".$_POST['username']. "' and password='".$_POST['password']."';";
+   if(!empty($_POST["username"])&&!empty($_POST["password"]))
+   {
+  $sql_select = "SELECT * FROM register where username='".$_POST['username']. "' and password='".$_POST['password']."';";
     $stmt = $conn->query($sql_select);
     $registrants = $stmt->fetchAll(); 
- if(count($registrants) > 0) {
-        echo "<h2>People who are registered:</h2>";
-		
+ 
     // print_r($registrant1);
      if(count($registrant1) ==1)
       {
@@ -30,5 +29,6 @@ echo  $sql_select = "SELECT * FROM register where username='".$_POST['username']
 			 echo "error ";
 			  
 		}
- }
+ 
+   }
 ?>
