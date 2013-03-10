@@ -17,18 +17,14 @@ include "login.html";
    {
   $sql_select = "SELECT * FROM register where username='".$_POST['username']. "' and password='".$_POST['password']."';";
     $stmt = $conn->query($sql_select);
-    $registrant = $stmt->fetch(.$_POST['username']); 
+    $registrant = $stmt->fetch(); 
  
     // print_r($registrant1);
      if(count($registrant) ==1)
       {
-	Print "<table border cellpadding=3>"; 
- { 
- Print "<tr>"; 
- Print "<th>Name:</th> <td>".$registrant['department'] . "</td> "; 
- Print "<th>Pet:</th> <td>".$registrant['studentid'] . " </td></tr>"; 
- } 
- Print "</table>"; 
+		  echo "signed in";
 	  }
+	  else
+	  echo "error";
    }
 ?>
