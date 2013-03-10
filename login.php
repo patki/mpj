@@ -20,7 +20,7 @@ include "login.html";
     $registrants = $stmt->fetchAll(); 
  
     // print_r($registrant1);
-     if(count($registrant1) ==1)
+     if(count($registrants) ==1)
       {
 		echo "signed inn!!" ;
 	  }
