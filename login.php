@@ -17,24 +17,18 @@ include "login.html";
    {
   $sql_select = "SELECT * FROM register where username='".$_POST['username']. "' and password='".$_POST['password']."';";
     $stmt = $conn->query($sql_select);
-    $registrants = $stmt->fetch(); 
+    $registrant = $stmt->fetch(.$_POST['username']); 
  
     // print_r($registrant1);
-     if(count($registrants) ==1)
+     if(count($registrant) ==1)
       {
-		 echo "<table>";
-        echo "<tr><th>Name</th>";
-        echo "<th>Email</th>";
-        echo "<th>department</th>";
-        echo "<th>studentid</th></tr>";
-        foreach($registrants as $registrant) {
-            echo "<tr><td>".$registrant['username']."</td>";
-            echo "<td>".$registrant['email']."</td>";
-            echo "<td>".$registrant['department']."</td>";
-			 echo "<td>".$registrant['studentid']."</td></tr>";
-        }
-        echo "</table>";
-		}
- 
+	Print "<table border cellpadding=3>"; 
+ { 
+ Print "<tr>"; 
+ Print "<th>Name:</th> <td>".$registrant['department'] . "</td> "; 
+ Print "<th>Pet:</th> <td>".$registrant['studentid'] . " </td></tr>"; 
+ } 
+ Print "</table>"; 
+	  }
    }
 ?>
