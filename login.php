@@ -21,7 +21,7 @@
     // print_r($registrant1);
      if(count($registrant1) >0)
       {
-		  $tmp = $registrant1['object'];
+		  $tmp = $registrant1['username'];
 		  
 		  if($tmp->password==$_GET['password'])
 		  {

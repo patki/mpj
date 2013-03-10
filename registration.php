@@ -50,7 +50,8 @@
             echo "<tr><td>".$registrant['username']."</td>";
             echo "<td>".$registrant['email']."</td>";
             echo "<td>".$registrant['department']."</td>";
-			 echo "<td>".$registrant['studentid']."</td></tr>";
+			 echo "<td>".$registrant['studentid']."</td>";
+			  echo "<td>".$registrant['photo']."</td></tr>";
         }
         echo "</table>";
       
