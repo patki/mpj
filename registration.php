@@ -39,7 +39,7 @@
     echo "<h3>Your're registered!</h3>";
     }
  
-    $sql_select = "SELECT * FROM register where username=?";
+    $sql_select = "SELECT * FROM register";
     $stmt = $conn->query($sql_select);
     $registrants = $stmt->fetchAll(); 
     if(count($registrants) > 0) {

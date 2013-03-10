@@ -13,43 +13,23 @@
     }
 	  $check=false;
    
-   $stmt1 ="Select * from register where username=?";
- $prp1 = $conn->prepare($stmt1);
-  if($prp1->execute($_GET['username']) )
- {
-  $registrant1 = $prp1->fetch();
+   $stmt1 ="Select * from register where username=$_POST['username'] && password=$_POST['password']";
+ $prp1 = $conn->query($stmt1);
+$registrant1 = $prp1->fetch();
     // print_r($registrant1);
      if(count($registrant1) >0)
       {
-		  $tmp = $registrant1['username'];
-		  
-		  if($tmp->password==$_GET['password'])
-		  {
-			  $check=true;
-			  print '<script>';
-		      print'alert("Success!!cool!!")';
-		      print '</script>';
-		  }
+		echo "signed inn!!" ;
+	  }
 		  else
 		  {
-			  print '<script>';
-		      print'alert("Wrong password!!")';
-		      print '</script>';
+			 echo "error ";
 			  
 		}
-		if($check&&isset($_GET['but']))
-	    {
-			
-            header("Location: www.google.com") ;
-		}	
+		
 				  		  
       }
-	  else
-	  {
-		print '<script>';
-		print'alert("You are not registered!")';
-		print '</script>';
-	  }
+	
 }
 
 
