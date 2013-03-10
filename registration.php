@@ -37,7 +37,7 @@
     }
     echo "<h3>Your're registered!</h3>";
     }
-  <!--  // Retrieve data
+ 
     $sql_select = "SELECT * FROM register";
     $stmt = $conn->query($sql_select);
     $registrants = $stmt->fetchAll(); 
@@ -56,7 +56,7 @@
         }
         echo "</table>";
       
-    } --> else {
+    } {
         echo "<h3>No one is currently registered.</h3>";
     }
 	
