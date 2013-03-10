@@ -59,33 +59,4 @@
     }
 	
 	
-	$uploadDir = 'images/'; //Image Upload Folder
-if(isset($_POST['Submit']))
-{
-$fileName = $_FILES['Photo']['name'];
-$tmpName  = $_FILES['Photo']['tmp_name'];
-$fileSize = $_FILES['Photo']['size'];
-$fileType = $_FILES['Photo']['type'];
-$filePath = $uploadDir . $fileName;
-$result = move_uploaded_file($tmpName, $filePath);
-if (!$result) {
-echo "Error uploading file";
-exit;
-}
-if(!get_magic_quotes_gpc())
-{
-    $fileName = addslashes($fileName);
-	$filePath = addslashes($filePath);
-}
-$query = "INSERT INTO $register ( Image ) VALUES ('$filePath')";
-mysql_query($query) or die('Error, query failed'); 
-}
-
-
-$query = "SELECT * FROM $register WHERE username = '$username'";
-$result = mysql_query($query) or die(mysql_error());
-	while($row = mysql_fetch_array($result))
-	{
-echo "<img border=\"0\" src=\"".$row['Image']."\" width=\"102\" alt=\"Your Name\" height=\"91\">";
-}
 ?>
