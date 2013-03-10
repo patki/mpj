@@ -47,10 +47,10 @@
 		echo "studentid";
 		echo "department";
         foreach($registrants as $registrant) {
-            echo ".$registrant['username'].";
-            echo ".$registrant['email'].";
-			  echo ".$registrant['studentid'].";
-			    echo ".$registrant['department'].";
+            echo "$registrant['username']";
+            echo "$registrant['email']";
+			  echo "$registrant['studentid']";
+			    echo "$registrant['department']";
         }
        
     } else {
