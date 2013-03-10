@@ -19,6 +19,7 @@
         $password = $_POST['password'];
 		 $studentid = $_POST['studentid'];
 		  $department = $_POST['department'];
+		    $pic = $_POST['pic'];
         // Insert data
         $sql_insert = "INSERT INTO register (username, email, password,studentid,department) 
                    VALUES (?,?,?,?,?)";
@@ -28,6 +29,7 @@
         $stmt->bindValue(3, $password);
 		$stmt->bindValue(4, $studentid);
 		$stmt->bindValue(5, $department);
+		$stmt->bindValue(6, $pic);
         $stmt->execute();
     }
     catch(Exception $e) {
