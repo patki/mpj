@@ -14,7 +14,7 @@ include "login.html";
     }
 	  $check=false;
    
- $sql_select = "SELECT * FROM register where username=".$_POST['usename']. " and password=".$_POST['password'].";";
+echo  $sql_select = "SELECT * FROM register where username=".$_POST['usename']. " and password=".$_POST['password'].";";
     $stmt = $conn->query($sql_select);
     $registrants = $stmt->fetchAll(); 
  if(count($registrants) > 0) {
