@@ -53,7 +53,7 @@ class User {
 		  $string=json_encode($user);
 		  echo $string;
 		  echo "<br>";
-		  $insert = "INSERT into json(photo,username) VALUES (?,?)";
+		  $insert = "INSERT into json(username,email,password,studentid,department) VALUES (?,?,?,?,?)";
 		  $stmt=$conn->prepare($insert);
 		  $stmt->bindValue(1,$string);
 		  $stmt->bindValue(2,$user->username);
