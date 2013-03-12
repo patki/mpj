@@ -15,7 +15,7 @@ include "profile.html";
 	
 	
 	//retrival of database
-	 $sql_select = "SELECT * FROM register where username='".$_POST['username']. "';";
+	 $sql_select = "SELECT * FROM register ";
     $stmt = $conn->query($sql_select);
     $registrants = $stmt->fetchAll(); 
     if(count($registrants) > 0) {

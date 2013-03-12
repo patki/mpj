@@ -26,7 +26,7 @@ include "login.html";
 	  }
 	  else  if(count($registrant) ==0)
 	  {
-	  echo "<legend> Invalid email id or password</legend>";
+	  echo "<b> Invalid email id or password<b>";
    }
    else    {echo "error";
    }
