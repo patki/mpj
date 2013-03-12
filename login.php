@@ -1,4 +1,5 @@
 <?php
+ob_start();
 include "login.html";
     // DB connection info
     //TODO: Update the values for $host, $user, $pwd, and $db
@@ -23,6 +24,7 @@ include "login.html";
      if(count($registrant) ==1)
       {
 		  echo "signed in";
+		  header("Location: profile.php");
 	  }
 	  else  if(count($registrant) ==0)
 	  {
