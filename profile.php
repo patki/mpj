@@ -25,10 +25,12 @@ include "profile.html";
         echo "<th>Email</th>";
         echo "<th>department</th>";
         echo "<th>studentid</th></tr>";
+        foreach($registrants as $registrant) {
             echo "<tr><td>".$registrant['username']."</td>";
             echo "<td>".$registrant['email']."</td>";
             echo "<td>".$registrant['department']."</td>";
 			 echo "<td>".$registrant['studentid']."</td></tr>";
-             echo "</table>";
+        }
+        echo "</table>";
 	}
 		?>
