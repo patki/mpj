@@ -23,8 +23,9 @@ include "login.html";
     // print_r($registrant1);
      if(count($registrant) ==1)
       {
-		  echo "signed in";
-		  header("Location: 'profile.php'");
+		  
+		  header("Location: profile.php");
+		  
 	  }
 	  else  if(count($registrant) ==0)
 	  {
