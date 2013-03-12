@@ -1,5 +1,5 @@
 <?php
-ob_start();
+
 include "login.html";
     // DB connection info
     //TODO: Update the values for $host, $user, $pwd, and $db
@@ -23,8 +23,8 @@ include "login.html";
     // print_r($registrant1);
      if(count($registrant) ==1)
       {
-		  
-		  header("Location: profile.php");
+		  echo "<a href="profile.php">" "</a>";
+		
 		  
 	  }
 	  else  if(count($registrant) ==0)
