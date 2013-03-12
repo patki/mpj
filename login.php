@@ -19,20 +19,16 @@ include "login.html";
   $sql_select = "SELECT * FROM register where username='".$_POST['username']. "' and password='".$_POST['password']."';";
     $stmt = $conn->query($sql_select);
     $registrant = $stmt->fetchAll(); 
- 
-    // print_r($registrant1);
-     if(count($registrant) ==1)
+      if(count($registrant) ==1)
       {
-		  echo "<a href="profile.php">" "</a>";
-		
+		header('location:profile.php');
 		  
 	  }
 	  else  if(count($registrant) ==0)
 	  {
 	  echo "<legend> Invalid email id or password</legend>";
    }
-   else 
-   {echo "error";
+   else    {echo "error";
    }
    }
 ?>
