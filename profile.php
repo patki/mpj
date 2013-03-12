@@ -15,22 +15,20 @@ include "profile.html";
 	
 	
 	//retrival of database
-	 $sql_select = "SELECT * FROM register";
+	 $sql_select = "SELECT * FROM register where username='".$_POST['username']. "';";
     $stmt = $conn->query($sql_select);
     $registrants = $stmt->fetchAll(); 
     if(count($registrants) > 0) {
-        echo "<h2>People who are registered:</h2>";
+        echo "<h2>Your account details</h2>";
      echo "<table>";
         echo "<tr><th>Name</th>";
         echo "<th>Email</th>";
         echo "<th>department</th>";
         echo "<th>studentid</th></tr>";
-        foreach($registrants as $registrant) {
             echo "<tr><td>".$registrant['username']."</td>";
             echo "<td>".$registrant['email']."</td>";
             echo "<td>".$registrant['department']."</td>";
 			 echo "<td>".$registrant['studentid']."</td></tr>";
-        }
-        echo "</table>";
+             echo "</table>";
 	}
 		?>
