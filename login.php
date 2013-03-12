@@ -24,7 +24,7 @@ include "login.html";
      if(count($registrant) ==1)
       {
 		  echo "signed in";
-		  header("Location: mpj/profile.php");
+		  header("Location: GitHub/mpj/profile.php");
 	  }
 	  else  if(count($registrant) ==0)
 	  {
