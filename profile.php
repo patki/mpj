@@ -1,5 +1,5 @@
 <?php
-include "profile.html";
+
     // DB connection info
     //TODO: Update the values for $host, $user, $pwd, and $db
     //using the values you retrieved earlier from the portal.
@@ -15,7 +15,7 @@ include "profile.html";
 	
 	//$username=$_GET['id'];
 	//retrival of database
-	 $sql_select = "SELECT * FROM register where username=".$_SESSION["username"];
+	 echo $sql_select = "SELECT * FROM register where username=".$_SESSION["username"];
    
 	 if( $stmt = $conn->query($sql_select))
 	{

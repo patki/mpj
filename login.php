@@ -21,8 +21,8 @@ include "login.html";
     $registrant = $stmt->fetchAll(); 
       if(count($registrant) ==1)
       {
-		  $_SESSION["username"]=$_POST["username"];
-		header('location:profile.php');
+		 echo $_SESSION["username"]=$_POST["username"];
+		//header('location:profile.php');
 		  
 	  }
 	  else  if(count($registrant) ==0)
