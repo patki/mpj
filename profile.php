@@ -20,11 +20,7 @@ include "profile.html";
 	 if($prp->execute($username) )
 	{
 		   $username = $prp->fetch();
-			
-    }
-    $registrants = $stmt->fetch(); 
-    if(count($registrants) > 0) {
-        echo "<h2>Your account details</h2>";
+		       echo "<h2>Your account details</h2>";
      echo "<table>";
         echo "<tr><th>Name</th>";
         echo "<th>Email</th>";
@@ -37,5 +33,10 @@ include "profile.html";
 			 echo "<td>".$username['studentid']."</td></tr>";
         }
         echo "</table>";
-	}
+			
+    }
+    
+    
+    
+	
 		?>
