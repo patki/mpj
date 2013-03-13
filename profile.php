@@ -20,7 +20,7 @@ session_start();
      $stmt = $conn->query($sql_select);
 	  $registrant = $stmt->fetchAll();
 	  
-	  echo $registrant['username'];
+	 echo count($registrant);
     
 	
 		?>
