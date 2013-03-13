@@ -16,20 +16,13 @@ session_start();
 	//$username=$_GET['id'];
 	//retrival of database
 	 echo $sql_select = "SELECT * FROM register where username=".$_SESSION["username"];
-   
-	 if( $stmt = $conn->query($sql_select))
-	{
-		$registrant = $stmt->fetchAll();
-			
-			echo $registrant["username"];
-			echo $registrant["studentid"];
-			
-			
-			
-		
-		
-    }
-    
+       if($res=mysql_query($sql_select,$conn))
+	   {
+		echo "hello.."   
+		   
+		   
+		   
+	   }
     
     
 	

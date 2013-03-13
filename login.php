@@ -23,7 +23,7 @@ include "login.html";
       if(count($registrant) ==1)
       {
 		  $_SESSION["username"]=$_POST["username"];
-		header('location:test.php');
+		header('location:profile.php');
 		  
 	  }
 	  else  if(count($registrant) ==0)
