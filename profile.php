@@ -30,11 +30,11 @@ include "profile.html";
         echo "<th>Email</th>";
         echo "<th>department</th>";
         echo "<th>studentid</th></tr>";
-        foreach($username as $registrant) {
-            echo "<tr><td>".$registrant['username']."</td>";
-            echo "<td>".$registrant['email']."</td>";
-            echo "<td>".$registrant['department']."</td>";
-			 echo "<td>".$registrant['studentid']."</td></tr>";
+        foreach($username as $username) {
+            echo "<tr><td>".$username['username']."</td>";
+            echo "<td>".$username['email']."</td>";
+            echo "<td>".$username['department']."</td>";
+			 echo "<td>".$username['studentid']."</td></tr>";
         }
         echo "</table>";
 	}
