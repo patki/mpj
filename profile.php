@@ -17,21 +17,17 @@ include "profile.html";
 	//retrival of database
 	 $sql_select = "SELECT * FROM register where username=".$_SESSION["username"];
    
-	 if($res=mysql_query($sql_select,$conn))
+	 if( $stmt = $conn->query($sql_select))
 	{
-		echo "<table border='5'>";
-		echo "<tr>";
-		while($resultrow=mysql_fetch_array($res))
-		{
+		$registrant = $stmt->fetchAll();
 			
-			echo "<td>{$resultrow[0]}</td>";
+			echo $registrant["username"];
+			echo $registrant["studentid"];
 			
 			
 			
-		}
-		echo "</tr>";
-		echo "</table>";  
-			
+		
+		
     }
     
     
