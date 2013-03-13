@@ -13,11 +13,16 @@ include "profile.html";
         die(var_dump($e));
     }
 	
-	
+	$username=$_GET['id'];
 	//retrival of database
-	 $sql_select = "SELECT * FROM register ";
-    $stmt = $conn->query($sql_select);
-    $registrants = $stmt->fetchAll(); 
+	 $sql_select = "SELECT * FROM register where username=?";
+    $prp = $conn->prepare($sql_select);
+	 if($prp->execute($username) )
+	{
+		   $username = $prp->fetch();
+			
+    }
+    $registrants = $stmt->fetch(); 
     if(count($registrants) > 0) {
         echo "<h2>Your account details</h2>";
      echo "<table>";
@@ -25,7 +30,7 @@ include "profile.html";
         echo "<th>Email</th>";
         echo "<th>department</th>";
         echo "<th>studentid</th></tr>";
-        foreach($registrants as $registrant) {
+        foreach($username as $registrant) {
             echo "<tr><td>".$registrant['username']."</td>";
             echo "<td>".$registrant['email']."</td>";
             echo "<td>".$registrant['department']."</td>";
