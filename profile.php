@@ -1,5 +1,5 @@
 <?php
-
+session_start();
     // DB connection info
     //TODO: Update the values for $host, $user, $pwd, and $db
     //using the values you retrieved earlier from the portal.
