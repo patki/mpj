@@ -1,5 +1,6 @@
 <html>
 <head>
+
 <link rel="stylesheet" href="profile.css" />
 
 </head>
@@ -28,7 +29,7 @@ session_start();
 	  
 	 echo count($registrants);
 	 echo "<h2>People who are registered:</h2>";
-        echo "<table class='table'>";
+        echo "<table border='5' >";
         echo "<tr><th>Name</th>";
         echo "<th>Email</th>";
         echo "<th>password</th></tr>";
