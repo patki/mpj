@@ -18,7 +18,7 @@ session_start();
 	 echo $sql_select = "SELECT * FROM register where username=".$_SESSION["username"];
        if($res=mysql_query($sql_select,$conn))
 	   {
-		echo "hello.."   
+		echo "hello..";   
 		   
 		   
 		   
