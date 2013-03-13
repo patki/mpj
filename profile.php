@@ -1,3 +1,9 @@
+<html>
+<head>
+<link rel="stylesheet" href="profile.css" />
+
+</head>
+<body>
 <?php
 session_start();
     // DB connection info
@@ -35,3 +41,6 @@ session_start();
     
 	
 		?>
+		
+        </body>
+</html>

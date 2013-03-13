@@ -1,9 +1,4 @@
-<html>
-<head>
-<link rel="stylesheet" href="profile.css" />
 
-</head>
-<body>
 <?php
 ob_start();
 session_start();
@@ -41,5 +36,3 @@ include "login.html";
    }
    }
 ?>
-</body>
-</html>
