@@ -1,7 +1,7 @@
 <html>
 <head>
 
-<link rel="stylesheet" href="profile.css" />
+<link rel="stylesheet" href="css/bootstrap.css"/>
 
 </head>
 <body>
@@ -23,17 +23,17 @@ session_start();
 	
 	//$username=$_GET['id'];
 	//retrival of database
-	 echo $sql_select = "SELECT * FROM register where username='".$_SESSION["username"]."'";
-     
+	 $sql_select = "SELECT * FROM register where username='".$_SESSION["username"]."'";
      $stmt = $conn->query($sql_select);
 	  $registrants = $stmt->fetchAll();
 	  
 	 echo count($registrants);
-	 echo "<h2>People who are registered:</h2>";
-        echo "<table border='5' >";
+	 echo "<h2>your account details</h2>";
+        echo "<table class='table' >";
         echo "<tr><th>Name</th>";
-        echo "<th>Email</th>";
-        echo "<th>password</th></tr>";
+        echo "<th>email</th>";
+		echo "<th>studentid</th>";
+        echo "<th>department</th></tr>";
         foreach($registrants as $registrant) {
             echo "<tr><td>".$registrant['username']."</td>";
             echo "<td>".$registrant['email']."</td>";
