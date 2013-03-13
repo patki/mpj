@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 include "login.html";
     // DB connection info
     //TODO: Update the values for $host, $user, $pwd, and $db
@@ -21,11 +21,13 @@ include "login.html";
     $registrant = $stmt->fetchAll(); 
       if(count($registrant) ==1)
       {
+		  $_SESSION["username"]=$_POST["username"];
 		header('location:profile.php');
 		  
 	  }
 	  else  if(count($registrant) ==0)
 	  {
+		  print "your username is $username ";
 	  echo "<b> Invalid email id or password<b>";
    }
    else    {echo "error";
