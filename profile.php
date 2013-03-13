@@ -6,6 +6,7 @@
 </head>
 <body>
 <?php
+include "profile.html";
 session_start();
     // DB connection info
     //TODO: Update the values for $host, $user, $pwd, and $db
@@ -36,7 +37,8 @@ session_start();
         foreach($registrants as $registrant) {
             echo "<tr><td>".$registrant['username']."</td>";
             echo "<td>".$registrant['email']."</td>";
-            echo "<td>".$registrant['password']."</td></tr>";
+			echo "<td>".$registrant['studentid']."</td>";
+            echo "<td>".$registrant['department']."</td></tr>";
         }
         echo "</table>";
     
