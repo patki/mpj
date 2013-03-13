@@ -1,4 +1,5 @@
 <?php
+ob_start();
 session_start();
 include "login.html";
     // DB connection info
@@ -22,7 +23,7 @@ include "login.html";
       if(count($registrant) ==1)
       {
 		  $_SESSION["username"]=$_POST["username"];
-		header('location:profile.php');
+		header('location:test.php');
 		  
 	  }
 	  else  if(count($registrant) ==0)
