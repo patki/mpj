@@ -15,9 +15,12 @@ session_start();
 	
 	//$username=$_GET['id'];
 	//retrival of database
-	 echo $sql_select = "SELECT * FROM register where username=".$_SESSION["username"];
+	 echo $sql_select = "SELECT * FROM register where username='".$_SESSION["username"]."'";
      
-    
+     $stmt = $conn->query($sql_select);
+	  $registrant = $stmt->fetchAll();
+	  
+	  echo $registrant['username'];
     
 	
 		?>
