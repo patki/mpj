@@ -22,7 +22,7 @@ session_start();
 	  
 	 echo count($registrants);
 	 echo "<h2>People who are registered:</h2>";
-        echo "<table>";
+        echo "<table border="5" class="table">";
         echo "<tr><th>Name</th>";
         echo "<th>Email</th>";
         echo "<th>password</th></tr>";
