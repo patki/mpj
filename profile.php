@@ -18,9 +18,20 @@ session_start();
 	 echo $sql_select = "SELECT * FROM register where username='".$_SESSION["username"]."'";
      
      $stmt = $conn->query($sql_select);
-	  $registrant = $stmt->fetchAll();
+	  $registrants = $stmt->fetchAll();
 	  
-	 echo count($registrant);
+	 echo count($registrants);
+	 echo "<h2>People who are registered:</h2>";
+        echo "<table>";
+        echo "<tr><th>Name</th>";
+        echo "<th>Email</th>";
+        echo "<th>password</th></tr>";
+        foreach($registrants as $registrant) {
+            echo "<tr><td>".$registrant['username']."</td>";
+            echo "<td>".$registrant['email']."</td>";
+            echo "<td>".$registrant['password']."</td></tr>";
+        }
+        echo "</table>";
     
 	
 		?>
