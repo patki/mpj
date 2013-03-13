@@ -13,26 +13,24 @@ include "profile.html";
         die(var_dump($e));
     }
 	
-	$username=$_GET['id'];
+	//$username=$_GET['id'];
 	//retrival of database
-	 $sql_select = "SELECT * FROM register where username=?";
-    $prp = $conn->prepare($sql_select);
-	 if($prp->execute($username) )
+	 $sql_select = "SELECT * FROM register where username=".$_SESSION["username"];
+   
+	 if($res=mysql_query($sql_select,$conn))
 	{
-		   $username = $prp->fetch();
-		       echo "<h2>Your account details</h2>";
-     echo "<table>";
-        echo "<tr><th>Name</th>";
-        echo "<th>Email</th>";
-        echo "<th>department</th>";
-        echo "<th>studentid</th></tr>";
-        foreach($username as $username) {
-            echo "<tr><td>".$username['username']."</td>";
-            echo "<td>".$username['email']."</td>";
-            echo "<td>".$username['department']."</td>";
-			 echo "<td>".$username['studentid']."</td></tr>";
-        }
-        echo "</table>";
+		echo "<table border='5'>";
+		echo "<tr>";
+		while($resultrow=mysql_fetch_array($res))
+		{
+			
+			echo "<td>{$resultrow[0]}</td>";
+			
+			
+			
+		}
+		echo "</tr>";
+		echo "</table>";  
 			
     }
     
