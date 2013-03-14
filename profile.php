@@ -5,6 +5,10 @@
 
 </head>
 <body>
+<h2> <?php $registrant['email']?> </h2>
+<h2> <?php $registrant['username']?> </h2>
+<h2> <?php $registrant['studentid']?> </h2>
+<h2> <?php $registrant['department']?> </h2>
 <?php
 include "profile.html";
 session_start();

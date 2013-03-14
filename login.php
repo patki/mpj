@@ -25,7 +25,7 @@ include "login.html";
       {
 		  $_SESSION["username"]=$_POST["username"];
 		header('location:profile.php');
-		  
+		 // header('location:profile.php?id='+$_POST["username"]);
 	  }
 	  else  if(count($registrant) ==0)
 	  {
