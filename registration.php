@@ -26,7 +26,7 @@
 		  
         // Insert data
 
-     echo    $sql_insert = "INSERT INTO registration (username,email,password,phoneno,location) 
+        $sql_insert = "INSERT INTO registration (username,email,password,phoneno,location) 
                    VALUES (?,?,?,?,?)";
         $stmt = $conn->prepare($sql_insert);
         $stmt->bindValue(1, $username);
