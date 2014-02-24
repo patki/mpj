@@ -5,7 +5,7 @@
     //using the values you retrieved earlier from the portal.
     // Connect to database.
     try {
-          $conn = new PDO ( "sqlsrv:server = tcp:j66k9fh59y.database.windows.net,1433; Database = database", "vishwas", "HelloWorld12");      
+          $conn = new PDO ( "sqlsrv:server = tcp:pocxo8zlbf.database.windows.net,1433; Database = database", "sambaridly", "Butter@dosa112");      
             $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
     }
     
@@ -18,18 +18,18 @@
         $username = $_POST['username'];
         $email = $_POST['email'];
         $password = $_POST['password'];
-		 $studentid = $_POST['studentid'];
-		  $department = $_POST['department'];
+		 $phoneno = $_POST['phoneno'];
+		  $location = $_POST['location'];
 		  
         // Insert data
-        $sql_insert = "INSERT INTO register (username, email, password,studentid,department) 
+        $sql_insert = "INSERT INTO register (username, email, password,phoneno,location) 
                    VALUES (?,?,?,?,?)";
         $stmt = $conn->prepare($sql_insert);
         $stmt->bindValue(1, $username);
         $stmt->bindValue(2, $email);
         $stmt->bindValue(3, $password);
-		$stmt->bindValue(4, $studentid);
-		$stmt->bindValue(5, $department);
+		$stmt->bindValue(4, $phoneno);
+		$stmt->bindValue(5, $location);
 		
         $stmt->execute();
     }
@@ -52,8 +52,8 @@
         foreach($registrants as $registrant) {
             echo "<tr><td>".$registrant['username']."</td>";
             echo "<td>".$registrant['email']."</td>";
-            echo "<td>".$registrant['department']."</td>";
-			 echo "<td>".$registrant['studentid']."</td></tr>";
+            echo "<td>".$registrant['phoneno']."</td>";
+			 echo "<td>".$registrant['location']."</td></tr>";
         }
         echo "</table>";
       
