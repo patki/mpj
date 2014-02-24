@@ -1,5 +1,5 @@
 <?php
-//include "registration.html";
+include "registration.html";
     // DB connection info
     //TODO: Update the values for $host, $user, $pwd, and $db
     //using the values you retrieved earlier from the portal.
@@ -22,7 +22,7 @@
 		  $location = $_POST['location'];
 		  
         // Insert data
-        $sql_insert = "INSERT INTO register (username, email, password,phoneno,location) 
+        $sql_insert = "INSERT INTO registration (username, email, password,phoneno,location) 
                    VALUES (?,?,?,?,?)";
         $stmt = $conn->prepare($sql_insert);
         $stmt->bindValue(1, $username);
@@ -47,8 +47,8 @@
      echo "<table>";
         echo "<tr><th>Name</th>";
         echo "<th>Email</th>";
-        echo "<th>department</th>";
-        echo "<th>studentid</th></tr>";
+        echo "<th>phoneno</th>";
+        echo "<th>location</th></tr>";
         foreach($registrants as $registrant) {
             echo "<tr><td>".$registrant['username']."</td>";
             echo "<td>".$registrant['email']."</td>";
