@@ -14,7 +14,7 @@
         die(var_dump($e));
     }
     // Insert registration info
-        $username = $_POST['username'];
+       echo $username = $_POST['username'];
         $email = $_POST['email'];
         $password = $_POST['password'];
 		$phoneno = $_POST['phoneno'];
