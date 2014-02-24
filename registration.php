@@ -7,21 +7,23 @@
     try {
           $conn = new PDO ( "sqlsrv:server = tcp:pocxo8zlbf.database.windows.net,1433; Database =classifieds", "sambaridly", "Butter@dosa112");      
             $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
-            echo "success";
+            if ($conn) {
+                echo "success";
+            }
     }
     
     catch(Exception $e){
         die(var_dump($e));
     }
     // Insert registration info
-       echo $username = $_POST['username'];
+        $username = $_POST['username'];
         $email = $_POST['email'];
         $password = $_POST['password'];
 		$phoneno = $_POST['phoneno'];
 		$location = $_POST['location'];
 		  
         // Insert data
-        $sql_insert = "INSERT INTO registration (username, email, password,phoneno,location) 
+        $sql_insert = "INSERT INTO registration (username,email,password,phoneno,location) 
                    VALUES (?,?,?,?,?)";
         $stmt = $conn->prepare($sql_insert);
         $stmt->bindValue(1, $username);
