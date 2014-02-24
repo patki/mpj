@@ -17,14 +17,14 @@ include "login.html";
         die(var_dump($e));
     }
 	  $check=false;
-   if(!empty($_POST["username"])&&!empty($_POST["password"]))
+   if(!empty($_POST["email"])&&!empty($_POST["password"]))
    {
-  $sql_select = "SELECT * FROM registration where username='".$_POST['username']. "' and password='".$_POST['password']."';";
+  $sql_select = "SELECT * FROM registration where username='".$_POST['email']. "' and password='".$_POST['password']."';";
     $stmt = $conn->query($sql_select);
     $registrant = $stmt->fetchAll(); 
       if(count($registrant) ==1)
       {
-		  echo $_SESSION["username"]=$_POST["username"];
+		  echo $_SESSION["username"]=$_POST['email'];
 		//header('location:profile.php');
 		 // header('location:profile.php?id='+$_POST["username"]);
 	  }
