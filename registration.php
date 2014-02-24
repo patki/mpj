@@ -16,6 +16,8 @@
         die(var_dump($e));
     }
     // Insert registration info
+    if(!empty($_POST)) {
+    try {
         $username = $_POST['username'];
         $email = $_POST['email'];
         $password = $_POST['password'];
@@ -23,7 +25,8 @@
 		$location = $_POST['location'];
 		  
         // Insert data
-        $sql_insert = "INSERT INTO registration (username,email,password,phoneno,location) 
+
+     echo    $sql_insert = "INSERT INTO registration (username,email,password,phoneno,location) 
                    VALUES (?,?,?,?,?)";
         $stmt = $conn->prepare($sql_insert);
         $stmt->bindValue(1, $username);
@@ -33,9 +36,12 @@
 		$stmt->bindValue(5, $location);
 		
         $stmt->execute();
-   
+       }
+        catch(Exception $e) {
+        die(var_dump($e));
+    }
     echo "<h3>Your're registered!</h3>";
-    
+    }
  
    /* $sql_select = "SELECT * FROM register";
     $stmt = $conn->query($sql_select);
