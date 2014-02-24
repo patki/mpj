@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link href="css/bootstrap.css" rel="stylesheet" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Classifieds</title>
+<style type="text/css">
+      body {
+        padding-top: 20px;
+        padding-bottom: 40px;
+      }
+
+      /* Custom container */
+      .container-narrow {
+        margin: 0 auto;
+        max-width: 900px;
+      }
+      .container-narrow > hr {
+        margin: 30px 0;
+      }
+
+      /* Main marketing message and sign up button 
+      .jumbotron {
+        margin: 60px 0;
+        text-align: center;
+      }
+      .jumbotron h1 {
+        font-size: 72px;
+        line-height: 1;
+      }
+      .jumbotron .btn {
+        font-size: 21px;
+        padding: 14px 24px;
+      }
+
+       Supporting marketing content 
+      .marketing {
+        margin: 60px 0;
+      }
+      .marketing p + h4 {
+        margin-top: 28px;
+      }*/
+    </style>
+</head>
+
+<body>
+<div class="container-narrow">
+<div class="navbar">
+  <div class="navbar-inner">
+    <a class="brand" href="#">Classifieds</a>
+  </div>
+</div>
+
+<div class="row" style="height:60px">
+</div>
+<div class="">
+<legend class="lead"><b>Post a free Ad-Select a Category!!</b></legend>
+<form class="form-horizontal" method="post" action="" enctype="multipart/form-data">
+   <div class="control-group">
+   <label class="control-label" for="inputEmail">Choosen category</label>
+     <div class="controls">
+      <input type="text" id="inputEmail" placeholder="" name="">
+    </div>
+  </div>
+  <div class="control-group">
+<label class="control-label" for="inputEmail">Ad title</label>
+    <div class="controls">
+      <input type="email" id="inputEmail" placeholder="" name="adtitle">
+    </div>
+  </div>
+  <div class="control-group">
+   <label class="control-label" for="inputEmail">Photos</label>
+    <div class="controls">
+       <a class="btn btn-success" href="registration.html">Add photos</a>
+    </div>
+  </div>
+ 
+  <div class="control-group">
+    <label class="control-label" for="inputEmail">Topic</label>
+    <div class="controls">
+       <select class="span3" name="">
+  <option value="1">Travel</option>
+  <option value="2">Home</option>
+  <option value="3">Management</option>
+  <option value="4">Education</option>
+</select>
+    </div>
+  </div>
+  <div class="control-group">
+   <label class="control-label" for="inputEmail">Description of your Ad</label>
+    <div class="controls">
+      <textarea rows="4" cols="50" maxlength="150"  style="width:400px;resize:none">
+    </textarea>
+  </div>
+</div>
+  <div class="control-group">
+<label class="control-label" for="inputEmail">Price in Rs</label>
+    <div class="controls">
+      <input type="number" id="inputEmail" placeholder="" name="adtitle">
+      <input type="checkbox" id="inputEmail" value="0" > Free
+    </div>
+  </div>
+<p></p>
+<legend><b>Seller Information</b></legend>
+<div class="control-group">
+   <label class="control-label" for="inputEmail">Contact name*</label>
+     <div class="controls">
+      <input type="text" id="inputEmail" placeholder="" name="" required>
+    </div>
+  </div>
+  <div class="control-group">
+<label class="control-label" for="inputEmail">Email*</label>
+    <div class="controls">
+      <input type="email" id="inputEmail" placeholder="" name="email" required>
+    </div>
+  </div>
+ 
+  <div class="control-group">
+    <label class="control-label" for="inputEmail">Phone No*</label>
+    <div class="controls">
+      <input type="text" id="inputPassword" placeholder="" name="phoneno" required>
+    </div>
+  </div>
+  <div class="control-group">
+   <label class="control-label" for="inputEmail">Location*</label>
+    <div class="controls">
+      <select class="span3" name="dob" required>
+  <option value="0">Select your location</option>
+  <option value="1">Andhra pradesh</option>
+  <option value="2">Arunachal pradesh</option>
+  <option value="3">Bihar</option>
+  <option value="4">Chattishgarh</option>
+</select>
+    </div>
+  </div>
+  
+   <div class="control-group">
+    <div class="controls; offset2">
+      
+      <button type="submit" class="btn  btn-success">Submit</button>
+    </div>
+  </div>
+  </form>
+  </div>
+</div>
+</body>
+</html>

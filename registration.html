@@ -3,20 +3,58 @@
 <head>
 <link href="css/bootstrap.css" rel="stylesheet" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Untitled Document</title>
+<title>Classifieds</title>
+<style type="text/css">
+      body {
+        padding-top: 20px;
+        padding-bottom: 40px;
+      }
+
+      /* Custom container */
+      .container-narrow {
+        margin: 0 auto;
+        max-width: 900px;
+      }
+      .container-narrow > hr {
+        margin: 30px 0;
+      }
+
+      /* Main marketing message and sign up button 
+      .jumbotron {
+        margin: 60px 0;
+        text-align: center;
+      }
+      .jumbotron h1 {
+        font-size: 72px;
+        line-height: 1;
+      }
+      .jumbotron .btn {
+        font-size: 21px;
+        padding: 14px 24px;
+      }
+
+       Supporting marketing content 
+      .marketing {
+        margin: 60px 0;
+      }
+      .marketing p + h4 {
+        margin-top: 28px;
+      }*/
+    </style>
 </head>
 
 <body>
+<div class="container-narrow">
 <div class="navbar">
   <div class="navbar-inner">
-    <a class="brand" href="#">Students Room</a>
+    <a class="brand" href="#">Classifieds</a>
   </div>
 </div>
 
 <div class="row" style="height:60px">
 </div>
-<div class="offset2">
-<legend class="lead">New user??<b>Create your room!!</b></legend>
+<div class="">
+<legend class="lead"><b>Create your Account and start posting  Ads of your interest!!</b></legend>
 <form class="form-horizontal" method="post" action="registration.php" enctype="multipart/form-data">
    <div class="control-group">
    <label class="control-label" for="inputEmail">Username</label>
@@ -38,15 +76,15 @@
   </div>
  
   <div class="control-group">
-    <label class="control-label" for="inputEmail">Student id</label>
+    <label class="control-label" for="inputEmail">Phone No</label>
     <div class="controls">
-      <input type="text" id="inputPassword" placeholder="studentid" name="studentid">
+      <input type="text" id="inputPassword" placeholder="phone no" name="phoneno">
     </div>
   </div>
   <div class="control-group">
-   <label class="control-label" for="inputEmail">Department</label>
+   <label class="control-label" for="inputEmail">Location</label>
     <div class="controls">
-      <input type="text" id="inputPassword" placeholder="department" name="department">
+      <input type="text" id="inputPassword" placeholder="location" name="location">
     </div>
   </div>
   
@@ -81,5 +119,6 @@
   </div>
   </form>
   </div>
+</div>
 </body>
 </html>
