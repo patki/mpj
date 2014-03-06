@@ -19,7 +19,7 @@ $sql_select = "SELECT * FROM adposts";
         echo "<table>";
         echo "<tr><th>Ad title</th>";
         echo "<th>Description</th>";
-        echo "<th>Price</th></tr>";
+        echo "<th>Price</th>";
         echo "<th>Seller's name</th>";
         echo "<th>Phone no</th>";
         echo "<th>Location</th></tr>";
