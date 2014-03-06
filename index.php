@@ -16,7 +16,7 @@ $sql_select = "SELECT * FROM adposts";
     $adposts = $stmt->fetchAll(); 
     if(count($adposts) > 0) {
         echo "<h2>Ads posted</h2>";
-        echo "<table class="table">";
+        echo "<table class=table>";
         echo "<tr><th>Ad title</th>";
         echo "<th>Description</th>";
         echo "<th>Price</th>";
