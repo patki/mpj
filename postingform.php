@@ -16,7 +16,7 @@
         die(var_dump($e));
     }
     //
-    if(!empty($_POST['choosen_category']&&$_POST['adtitle']&&$_POST['contact_name']&&$_POST['phoneno']) {
+    if(!empty($_POST['choosen_category']&&$_POST['adtitle']&&$_POST['contact_name']&&$_POST['phoneno'])) {
     try {
         $choosen_category = $_POST['choosen_category'];
         $adtitle = $_POST['adtitle'];
@@ -40,7 +40,7 @@
 		$stmt->bindValue(5, $description);
 		$stmt->bindValue(6, $price);
         $stmt->bindValue(7, $contact_name);
-        $stmt->bindValue(8, $password);
+        $stmt->bindValue(8, $email);
         $stmt->bindValue(9, $phoneno);
         $stmt->bindValue(10, $location);
         $stmt->execute();
