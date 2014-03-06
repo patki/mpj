@@ -18,7 +18,7 @@ $sql_select = "SELECT * FROM adposts";
     if(count($adposts) > 0) {
         echo "<h2>Ads posted</h2>";
        // echo "<div class='panel panel-default'>";
-        echo "<table class='table'>";
+        echo "<table>";
         echo "<tr><th>Ad title</th>";
         echo "<th>Description</th>";
         echo "<th>Price</th>";
