@@ -30,19 +30,19 @@
 		  
         // Insert data
 
-        $sql_insert = "INSERT INTO adposts (choosen_category,adtitle,photo,topic_category,description,price,contact_name,email,phoneno,location) 
-                   VALUES (?,?,?,?,?,?,?,?,?,?)";
+        $sql_insert = "INSERT INTO adposts (choosen_category,adtitle,topic_category,description,price,contact_name,email,phoneno,location) 
+                   VALUES (?,?,xxxx,?,?,?,?,?,?,?)";
         $stmt = $conn->prepare($sql_insert);
         $stmt->bindValue(1, $choosen_category);
         $stmt->bindValue(2, $adtitle);
-        $stmt->bindValue(3, $photo);
-		$stmt->bindValue(4, $topic_category);
-		$stmt->bindValue(5, $description);
-		$stmt->bindValue(6, $price);
-        $stmt->bindValue(7, $contact_name);
-        $stmt->bindValue(8, $email);
-        $stmt->bindValue(9, $phoneno);
-        $stmt->bindValue(10, $location);
+        //$stmt->bindValue(3, $photo);
+		$stmt->bindValue(3, $topic_category);
+		$stmt->bindValue(4, $description);
+		$stmt->bindValue(5, $price);
+        $stmt->bindValue(6, $contact_name);
+        $stmt->bindValue(7, $email);
+        $stmt->bindValue(8, $phoneno);
+        $stmt->bindValue(9, $location);
         $stmt->execute();
        }
         catch(Exception $e) {
