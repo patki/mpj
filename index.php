@@ -17,7 +17,7 @@ $sql_select = "SELECT * FROM adposts";
     $adposts = $stmt->fetchAll(); 
     if(count($adposts) > 0) {
         echo "<h2>Ads posted</h2>";
-        echo "<div class='panel panel-default'>";
+       // echo "<div class='panel panel-default'>";
         echo "<table class='table'>";
         echo "<tr><th>Ad title</th>";
         echo "<th>Description</th>";
@@ -31,12 +31,12 @@ $sql_select = "SELECT * FROM adposts";
             echo "<td>".$adpost['price']."</td>";
             echo "<td>".$adpost['contact_name']."</td>";
             echo "<td>".$adpost['phoneno']."</td>";
-            echo "<td>".$registrant['location']."</td></tr>";
+            echo "<td>".$adpost['location']."</td></tr>";
         }
         echo "</table>"
-        echo "</div>";;
+       // echo "</div>";;
     } else {
-        echo "<h3>No one is currently registered.</h3>";
+        //echo "<h3>No one is currently registered.</h3>";
     }
 
 
