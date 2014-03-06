@@ -11,33 +11,30 @@ try {
         die(var_dump($e));
     }
 
-$titles=array("choosen_category","adtitle","topic_category","description","price","contact_name","email","phoneno","location");
-
- $query="select * from adposts ";
-         $result=mysql_query($query);
-         $numrows=mysql_num_rows($result);
-         if ($numrows==0) {
-       echo "<center><h2 style=color:#FFF>No results found</h2></center>";
-          }
-         else{
-           while($row=mysql_fetch_row($result)){
-            
-             echo "<legend class=offset1 style=color:#FFF><b>ads posted</b></legend>";
-               for($i=0;$i<=7;$i++){
-                 echo "<table class=table table-bordered  style=height:30px;width:300px;margin-left:200px;color:#FFF>";
-                 echo "<tbody>";
-           echo "<tr class=text-left>";
-           echo "<td>".$titles[$i]."</td>";
-           echo "<td>".$row[$i]."</td>";
-           echo "</tr>";
-           echo "</tbody>";
-           echo "</table> ";
-                 }
-               echo "<hr></hr>";
-             }
-
-            }  
-
+$sql_select = "SELECT * FROM adposts";
+    $stmt = $conn->query($sql_select);
+    $adposts = $stmt->fetchAll(); 
+    if(count($adposts) > 0) {
+        echo "<h2>Ads posted</h2>";
+        echo "<table>";
+        echo "<tr><th>Ad title</th>";
+        echo "<th>Description</th>";
+        echo "<th>Price</th></tr>";
+        echo "<th>Seller's name</th>";
+        echo "<th>Phone no</th>";
+        echo "<th>Location</th></tr>";
+        foreach($adposts as $adpost) {
+            echo "<tr><td>".$adpost['adtitle']."</td>";
+            echo "<td>".$adpost['description']."</td>";
+            echo "<td>".$adpost['price']."</td>";
+            echo "<td>".$adpost['contact_name']."</td>";
+            echo "<td>".$adpost['phoneno']."</td>";
+            echo "<td>".$registrant['location']."</td></tr>";
+        }
+        echo "</table>";
+    } else {
+        echo "<h3>No one is currently registered.</h3>";
+    }
 
 
 ?>
