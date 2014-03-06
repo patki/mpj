@@ -16,7 +16,7 @@
         die(var_dump($e));
     }
     //
-    if(!empty($_POST['choosen_category']&&$_POST['adtitle']&&$_POST['contact_name']&&$_POST['phoneno'])) {
+    if(!empty($_POST['choosen_category'])&&!empty($_POST['adtitle'])&&!empty($_POST['contact_name'])&&!empty($_POST['phoneno'])) {
     try {
         $choosen_category = $_POST['choosen_category'];
         $adtitle = $_POST['adtitle'];
