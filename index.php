@@ -1,5 +1,15 @@
 <?php
-
+try {
+          $conn = new PDO ( "sqlsrv:server = tcp:pocxo8zlbf.database.windows.net,1433; Database =classifieds", "sambaridly", "Butter@dosa112");      
+            $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+            if ($conn) {
+                //echo "success";
+            }
+    }
+    
+    catch(Exception $e){
+        die(var_dump($e));
+    }
 
 $titles=array("choosen_category","adtitle","topic_category","description","price","contact_name","email","phoneno","location");
 
