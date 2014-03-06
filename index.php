@@ -10,7 +10,7 @@ try {
     catch(Exception $e){
         die(var_dump($e));
     }
-
+echo "<link href='css/bootstrap.css' rel='stylesheet' />";
 $sql_select = "SELECT * FROM adposts";
     $stmt = $conn->query($sql_select);
     $adposts = $stmt->fetchAll(); 
