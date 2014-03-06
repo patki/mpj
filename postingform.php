@@ -31,7 +31,7 @@
         // Insert data
 
         $sql_insert = "INSERT INTO adposts (choosen_category,adtitle,topic_category,description,price,contact_name,email,phoneno,location) 
-                   VALUES (?,?,xxxx,?,?,?,?,?,?,?)";
+                   VALUES (?,?,?,?,?,?,?,?,?)";
         $stmt = $conn->prepare($sql_insert);
         $stmt->bindValue(1, $choosen_category);
         $stmt->bindValue(2, $adtitle);
