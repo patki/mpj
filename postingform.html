@@ -45,10 +45,21 @@
 
 <body>
 <div class="container-narrow">
-<div class="navbar">
-  <div class="navbar-inner">
-    <a class="brand" href="#">Classifieds</a>
-  </div>
+<div class="navbar navbar-inverse">
+  <div class="navbar-inner ">
+    <a class="brand" href="default.html">eZeefieds</a>
+      <ul class="nav navbar-nav">
+        <li class=""><a href="default.html">Home</a></li>
+        <li><a href="registration.html">Create Account</a></li>
+        
+      </ul>
+      
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="login.html">Sign in</a></li>
+        <li><a href="postcategorypage.html">Post ad</a></li>
+      </ul>
+    
+  </div><!-- /.container-fluid -->
 </div>
 
 <div class="row" style="height:60px">
@@ -59,7 +70,7 @@
    <div class="control-group">
    <label class="control-label" for="inputEmail">Choosen category</label>
      <div class="controls">
-      <input type="text" id="inputEmail" placeholder="" name="">
+      <input type="text" id="inputEmail" placeholder="" name="choosen_category">
     </div>
   </div>
   <div class="control-group">
@@ -78,7 +89,7 @@
   <div class="control-group">
     <label class="control-label" for="inputEmail">Topic</label>
     <div class="controls">
-       <select class="span3" name="">
+       <select class="span3" name="topic_category">
   <option value="1">Travel</option>
   <option value="2">Home</option>
   <option value="3">Management</option>
@@ -89,14 +100,14 @@
   <div class="control-group">
    <label class="control-label" for="inputEmail">Description of your Ad</label>
     <div class="controls">
-      <textarea rows="4" cols="50" maxlength="150"  style="width:400px;resize:none">
+      <textarea rows="4" cols="50" maxlength="150" name="description" style="width:400px;resize:none">
     </textarea>
   </div>
 </div>
   <div class="control-group">
 <label class="control-label" for="inputEmail">Price in Rs</label>
     <div class="controls">
-      <input type="number" id="inputEmail" placeholder="" name="adtitle">
+      <input type="number" id="inputEmail" placeholder="" name="price">
       <input type="checkbox" id="inputEmail" value="0" > Free
     </div>
   </div>
@@ -105,7 +116,7 @@
 <div class="control-group">
    <label class="control-label" for="inputEmail">Contact name*</label>
      <div class="controls">
-      <input type="text" id="inputEmail" placeholder="" name="" required>
+      <input type="text" id="inputEmail" placeholder="" name="contact_name" required>
     </div>
   </div>
   <div class="control-group">
@@ -124,7 +135,7 @@
   <div class="control-group">
    <label class="control-label" for="inputEmail">Location*</label>
     <div class="controls">
-      <select class="span3" name="dob" required>
+      <select class="span3" name="location" required>
   <option value="0">Select your location</option>
   <option value="1">Andhra pradesh</option>
   <option value="2">Arunachal pradesh</option>
