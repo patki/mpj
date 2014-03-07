@@ -19,7 +19,7 @@ $sql_select = "SELECT * FROM adposts";
         echo "<div class=container-narrow>";
         echo "<div class=panel panel-default>";
         echo "<h2>Ads posted</h2>";
-        echo "<table class='table'>";
+        echo "<table class='table table-bordered'>";
         echo "<tr><th>Ad title</th>";
         echo "<th>Description</th>";
         echo "<th>Price</th>";
