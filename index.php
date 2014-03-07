@@ -16,7 +16,7 @@ $sql_select = "SELECT * FROM adposts";
     $stmt = $conn->query($sql_select);
     $adposts = $stmt->fetchAll(); 
     if(count($adposts) > 0) {
-        
+        echo "<div class='container-narrow";
         echo "<div class=panel panel-default>";
         echo "<h2>Ads posted</h2>";
         echo "<table class='table'>";
@@ -36,6 +36,7 @@ $sql_select = "SELECT * FROM adposts";
         }
         echo "</table>";
         echo "</div>";
+        echo ">/div>";
     } else {
         echo "<h3>No one is currently registered.</h3>";
     }
