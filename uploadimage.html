@@ -47,7 +47,7 @@
 <div class="container-narrow">
 <div class="navbar navbar-inverse">
   <div class="navbar-inner ">
-    <a class="brand" href="default.html">eZeefieds</a>
+    <a class="brand" href="index.php">eZeefieds</a>
       <ul class="nav navbar-nav">
         <li class=""><a href="default.html">Home</a></li>
         <li><a href="registration.html">Create Account</a></li>
@@ -81,27 +81,3 @@
 </html>
 
 
-<?php
-    try {
-          $conn = new PDO ( "sqlsrv:server = tcp:pocxo8zlbf.database.windows.net,1433; Database =classifieds", "sambaridly", "Butter@dosa112");      
-            $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
-            if ($conn) {
-                //echo "success";
-            }
-    }
-    
-    catch(Exception $e){
-        die(var_dump($e));
-    }
-$image=$_POST['image'];
- $sql_insert = "INSERT INTO images (image) 
-                   VALUES (?)";
-        $stmt = $conn->prepare($sql_insert);
-        $stmt->bindValue(1, $image);
-         $stmt->execute();
-       
-
-
-
-
-?>

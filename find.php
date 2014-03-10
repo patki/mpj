@@ -10,7 +10,7 @@ try {
     catch(Exception $e){
         die(var_dump($e));
     }
-    $category=$_POST['link'];
+  echo  $category=$_POST['link'];
 $sql_select = "SELECT * FROM adposts where choosen_category='$category'";
     $stmt = $conn->query($sql_select);
     $registrants = $stmt->fetchAll(); 
