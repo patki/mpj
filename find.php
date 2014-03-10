@@ -13,7 +13,7 @@ try {
   echo  $category=$_POST['link'];
 $sql_select = "SELECT * FROM adposts where choosen_category='$category'";
     $stmt = $conn->query($sql_select);
-    $registrants = $stmt->fetchAll(); 
+    $adposts = $stmt->fetchAll(); 
     if(count($adposts) > 0) {
         echo "<div class=container-narrow>";
         echo "<div class=panel panel-default>";
