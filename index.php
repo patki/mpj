@@ -18,7 +18,7 @@ $sql_select = "SELECT * FROM adposts";
     if(count($adposts) > 0) {
         echo "<div class=container-narrow>";
         echo "<div class=panel panel-default>";
-        echo "<h2>Ads posted</h2>";
+        echo "<legend>Ads posted</legend>";
         echo "<table class='table table-bordered'>";
         echo "<tr><th>Ad title</th>";
         echo "<th>Description</th>";
@@ -38,7 +38,7 @@ $sql_select = "SELECT * FROM adposts";
         echo "</div>";
         echo "</div>";
     } else {
-        echo "<h3>No one is currently registered.</h3>";
+        echo "<h3></h3>";
     }
 
 
