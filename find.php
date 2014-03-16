@@ -1,5 +1,5 @@
 <?php
-include "default.html";
+include "login.html";
 try {
           $conn = new PDO ( "sqlsrv:server = tcp:pocxo8zlbf.database.windows.net,1433; Database =classifieds", "sambaridly", "Butter@dosa112");      
             $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
@@ -12,6 +12,7 @@ try {
         die(var_dump($e));
     }
   echo "sjdkjasdasd";
+  echo "<link href='css/bootstrap.css' rel='stylesheet' />";
   $footwear=footwear;
 $sql_select = 'SELECT * FROM adposts where choosen_category=.'$footwear'.';
     $stmt = $conn->query($sql_select);
