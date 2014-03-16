@@ -13,7 +13,7 @@ try {
     }
    echo $footwear=footwear;
 echo "<link href='css/bootstrap.css' rel='stylesheet' />";
-$sql_select = "SELECT * FROM adposts where topic_category=1 OR location=1 OR adtitle='maruthi'";
+$sql_select = "SELECT * FROM adposts where topic_category=1 OR location=1 AND adtitle='maruthi'";
     $stmt = $conn->query($sql_select);
     $adposts = $stmt->fetchAll(); 
     if(count($adposts) > 0) {
