@@ -20,7 +20,7 @@ $sql_select = "SELECT * FROM adposts where choosen_category='footwear'";
         echo "<div class=container-narrow>";
         echo "<div class=panel panel-default>";
         echo "<legend>Ads posted</legend>";
-        echo "<table class='table table-bordered;fixed'>";
+        echo "<table class='table table-bordered>";
         echo "<tr><th>Ad title</th>";
         echo "<th>Description</th>";
         echo "<th>Price</th>";
