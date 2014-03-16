@@ -11,16 +11,16 @@ try {
     catch(Exception $e){
         die(var_dump($e));
     }
-   echo $footwear=$_GET['id'];
+   echo $category=$_GET['id'];
 echo "<link href='css/bootstrap.css' rel='stylesheet' />";
-$sql_select = "SELECT * FROM adposts where choosen_category='$footwear'";
+$sql_select = "SELECT * FROM adposts where choosen_category='$category'";
     $stmt = $conn->query($sql_select);
     $adposts = $stmt->fetchAll(); 
     if(count($adposts) > 0) {
         echo "<div class=container-narrow>";
         echo "<div class=panel panel-default>";
         echo "<legend>Ads posted</legend>";
-        echo "<table class='table table-bordered>";
+        echo "<table class='table table-bordered'>";
         echo "<tr><th>Ad title</th>";
         echo "<th>Description</th>";
         echo "<th>Price</th>";
