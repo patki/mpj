@@ -12,7 +12,7 @@ try {
         die(var_dump($e));
     }
 echo "<link href='css/bootstrap.css' rel='stylesheet' />";
-$sql_select = "SELECT * FROM adposts where choosen_category=footwear";
+$sql_select = "SELECT * FROM adposts where choosen_category="footwear";";
     $stmt = $conn->query($sql_select);
     $adposts = $stmt->fetchAll(); 
     if(count($adposts) > 0) {
