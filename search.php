@@ -11,8 +11,9 @@ try {
     catch(Exception $e){
         die(var_dump($e));
     }
+    $footwear=footwear;
 echo "<link href='css/bootstrap.css' rel='stylesheet' />";
-$sql_select = "SELECT * FROM adposts where topic_category=1";
+$sql_select = "SELECT * FROM adposts where topic_category=1 || choosen_category=footwear";
     $stmt = $conn->query($sql_select);
     $adposts = $stmt->fetchAll(); 
     if(count($adposts) > 0) {
