@@ -11,7 +11,7 @@ try {
     catch(Exception $e){
         die(var_dump($e));
     }
-  //echo  $category=$_Get['cat_id'];
+  echo "sjdkjasdasd";
 $sql_select = 'SELECT * FROM adposts where choosen_category='footwear';';
     $stmt = $conn->query($sql_select);
     $adposts = $stmt->fetchAll(); 
