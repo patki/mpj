@@ -10,7 +10,7 @@ try {
     catch(Exception $e){
         die(var_dump($e));
     }
-  echo  $category=$_POST['link'];
+  echo  $category=$_Get['cat_id'];
 $sql_select = 'SELECT * FROM adposts where choosen_category=$category';
     $stmt = $conn->query($sql_select);
     $adposts = $stmt->fetchAll(); 
