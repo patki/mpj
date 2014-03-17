@@ -44,7 +44,23 @@
       body{
        /* border:5px solid;*/
       }
-    </style></head>
+    </style>
+<script type="text/javascript">
+function show_hide(){
+  i=1;
+  if(i!=0){ 
+    document.getElementById('show_hide').style.visibility = 'visible';
+    i=0;
+  }
+  if(i==0){
+    document.getElementById('show_hide').style.visibility = 'hidden';
+    i=1;
+  }
+}
+</script>
+
+
+  </head>
 
 <body><nav class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="navbar-inner ">
@@ -69,9 +85,9 @@
         <p class="lead">Its simple posting an Advertisement and find a customer</p>
         <a class="btn btn-large btn-success" href="postcategorypage.html">Submit an Ad</a>
  </div>
-<div class="">
+<div class="" id="show_hide">
 <form class="form-horizontal" method="Get" action="" enctype="multipart/form-data">
-  <legend>Select a Category to browse!!</legend>
+  <legend>Select a Category to browse!!</legend><a href="#" onClick="show_hide();"><span class="badge">show/hide</span></a>
   <div style="width:300px;">
     <h3><a href="/search.php?id=mobiles-accessories">
 <strong>Mobiles & Tablets</strong>
