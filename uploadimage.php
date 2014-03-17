@@ -21,7 +21,7 @@ if ((($_FILES["file"]["type"] == "image/gif")
 || ($_FILES["file"]["type"] == "image/pjpeg")
 || ($_FILES["file"]["type"] == "image/x-png")
 || ($_FILES["file"]["type"] == "image/png"))
-&& ($_FILES["file"]["size"] < 200000)
+//&& ($_FILES["file"]["size"] < 200000)
 && in_array($extension, $allowedExts))
   {
   if ($_FILES["file"]["error"] > 0)
@@ -35,7 +35,7 @@ if ((($_FILES["file"]["type"] == "image/gif")
     echo "Size: " . ($_FILES["file"]["size"] / 1024) . " kB<br>";
     echo "Temp file: " . $_FILES["file"]["tmp_name"] . "<br>";
 
-    if (file_exists("upload/" . $_FILES["file"]["name"]))
+    if (file_exists("images/" . $_FILES["file"]["name"]))
       {
       echo $_FILES["file"]["name"] . " already exists. ";
       }
