@@ -11,23 +11,6 @@ include "uploadimage.html";
     catch(Exception $e){
         die(var_dump($e));
     }
-$image=$_POST['image'];
-$target_path = "http://icards.azurewebsites.net/".$image;
-
-$target_path = $target_path . basename( $_FILES['file']['name']);
- $sql_insert = "INSERT INTO images (image) 
-                   VALUES (?)";
-        $stmt = $conn->prepare($sql_insert);
-        $stmt->bindValue(1, $target_path);
-         $stmt->execute();
-       
-
-
-
-
-?>
-
-<?php
 $allowedExts = array("gif", "jpeg", "jpg", "png");
 $temp = explode(".", $_FILES["file"]["name"]);
 $extension = end($temp);
@@ -59,7 +42,7 @@ if ((($_FILES["file"]["type"] == "image/gif")
     else
       {
       move_uploaded_file($_FILES["file"]["tmp_name"],
-      "upload/" . $_FILES["file"]["name"]);
+      "images/" . $_FILES["file"]["name"]);
       
       //echo "Stored in: " . "upload/" . $_FILES["file"]["name"];
       }
@@ -69,4 +52,14 @@ else
   {
   echo "Invalid file";
   }
+
+$target_path = "C:/Users/vishwas/Documents/GitHub/mpj/images/";
+
+$target_path = $target_path . basename( $_FILES['file']['name']); 
+ $sql_insert = "INSERT INTO images (image) 
+                   VALUES (?)";
+        $stmt = $conn->prepare($sql_insert);
+        $stmt->bindValue(1, file_get_contents($target_path));
+        $stmt->execute();
+      
 ?>
