@@ -1,5 +1,5 @@
 <?php
-//include "registration.html";
+include "postingform.html";
     // DB connection info
     //TODO: Update the values for $host, $user, $pwd, and $db
     //using the values you retrieved earlier from the portal.
@@ -15,6 +15,7 @@
     catch(Exception $e){
         die(var_dump($e));
     }
+
     //
     if(!empty($_POST['choosen_category'])&&!empty($_POST['adtitle'])&&!empty($_POST['contact_name'])&&!empty($_POST['phoneno'])) {
     try {
