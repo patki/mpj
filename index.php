@@ -16,7 +16,7 @@ $sql_select = "SELECT * FROM adposts";
     $stmt = $conn->query($sql_select);
     $adposts = $stmt->fetchAll(); 
     if(count($adposts) > 0) {
-        echo "<div class=container>";
+        echo "<div class=container-fluid>";
         echo "<div class=panel panel-default>";
         echo "<legend>Ads posted</legend>";
         echo "<table class='table table-bordered'>";
