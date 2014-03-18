@@ -13,6 +13,7 @@ try {
     }
  $category=$_GET['id'];
 echo "<link href='css/bootstrap.css' rel='stylesheet' />";
+echo "<body>";
 echo "<nav class=navbar navbar-default navbar-fixed-top role=navigation>
   <div class=navbar-inner>
     <a class=brand href=index.php>ezeefieds</a>
@@ -58,5 +59,5 @@ $sql_select = "SELECT * FROM adposts where choosen_category='$category'";
         echo "<h3></h3>";
     }
 
-
+echo "</body>";
 ?>
