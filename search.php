@@ -19,6 +19,7 @@ $sql_select = "SELECT * FROM adposts where choosen_category='$category'";
     if(count($adposts) > 0) {
         echo "<div class=container-narrow>";
         echo "<div class=panel panel-default>";
+        echo "<div style=height:50px></div>";
         echo "<legend>Ads posted</legend>";
         echo "<table class='table table-bordered'>";
         echo "<tr><th>Ad title</th>";
