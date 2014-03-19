@@ -1,5 +1,5 @@
 <?php
-//include "default.html";
+include "nav.html";
 try {
           $conn = new PDO ( "sqlsrv:server = tcp:pocxo8zlbf.database.windows.net,1433; Database =classifieds", "sambaridly", "Butter@dosa112");      
             $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
@@ -13,23 +13,6 @@ try {
     }
  $category=$_GET['id'];
 echo "<link href='css/bootstrap.css' rel='stylesheet' />";
-echo "<body>";
-echo "<nav class=navbar navbar-default navbar-fixed-top role=navigation>
-  <div class=navbar-inner>
-    <a class=brand href=index.php>ezeefieds</a>
-      <ul class=nav navbar-nav>
-        <li class=""><a href=index.php>Home</a></li>
-        <li><a href=registration.html>Create Account</a></li>
-        
-      </ul>
-      
-      <ul class=nav navbar-nav navbar-right>
-        <li><a href=login.html>Sign in</a></li>
-        <li><a href=postcategorypage.html>Post ad</a></li>
-      </ul>
-    
-  </div><!-- /.container-fluid -->
-</nav>";
 $sql_select = "SELECT * FROM adposts where choosen_category='$category'";
     $stmt = $conn->query($sql_select);
     $adposts = $stmt->fetchAll(); 
@@ -58,6 +41,6 @@ $sql_select = "SELECT * FROM adposts where choosen_category='$category'";
     } else {
         echo "<h3></h3>";
     }
-
 echo "</body>";
+
 ?>
