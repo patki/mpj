@@ -13,15 +13,15 @@ include "nav.html";
         die(var_dump($e));
     }
 	echo "progilre";
-   // if(!empty($_POST['email'])){
+    if(!empty($_POST['email'])){
         $email=$_POST['email'];
         $password=$_POST['password'];
          $sql_select = "SELECT * FROM registration where email='$email'and password='$password'";
          $stmt = $conn->query($sql_select);
          $myprofile = $stmt->fetchAll();
-         $username=$stmt->fetch('$email');
+         //$username=$stmt->fetch('$email');
          if(count($myprofile)==1){
-            echo "Logged user:"$username;
+            echo "Logged user:" $email;
             $sql_select = "SELECT * FROM adposts where email='$email'";
                 $stmt = $conn->query($sql_select);
                 $adposts = $stmt->fetchAll(); 
@@ -53,5 +53,5 @@ include "nav.html";
                 }
             
          }
-
+    }
 ?>
