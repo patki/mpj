@@ -5,49 +5,66 @@
 
 </head>
 <body>
-<h2> <?php $registrant['email']?> </h2>
-<h2> <?php $registrant['username']?> </h2>
-<h2> <?php $registrant['studentid']?> </h2>
-<h2> <?php $registrant['department']?> </h2>
 <?php
-include "profile.html";
 session_start();
     // DB connection info
     //TODO: Update the values for $host, $user, $pwd, and $db
     //using the values you retrieved earlier from the portal.
     // Connect to database.
     try {
-          $conn = new PDO ( "sqlsrv:server = tcp:j66k9fh59y.database.windows.net,1433; Database = database", "vishwas", "HelloWorld12");      
+          $conn = new PDO ( "sqlsrv:server = tcp:pocxo8zlbf.database.windows.net,1433; Database =classifieds", "sambaridly", "Butter@dosa112");      
             $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+            if ($conn) {
+                echo "success";
+            }
     }
     
     catch(Exception $e){
         die(var_dump($e));
     }
 	
-	//$username=$_GET['id'];
-	//retrival of database
-	 $sql_select = "SELECT * FROM register where username='".$_SESSION["username"]."'";
-     $stmt = $conn->query($sql_select);
-	  $registrants = $stmt->fetchAll();
-	  
-	 echo count($registrants);
-	 echo "<h2>your account details</h2>";
-        echo "<table class='table' >";
-        echo "<tr><th>Name</th>";
-        echo "<th>email</th>";
-		echo "<th>studentid</th>";
-        echo "<th>department</th></tr>";
-        foreach($registrants as $registrant) {
-            echo "<tr><td>".$registrant['username']."</td>";
-            echo "<td>".$registrant['email']."</td>";
-			echo "<td>".$registrant['studentid']."</td>";
-            echo "<td>".$registrant['department']."</td></tr>";
-        }
-        echo "</table>";
-    
-	
-		?>
-		
+    if(!empty($_SESSION['email'])){
+        $email=$_POST['email'];
+        $password=$_POST['password'];
+         $sql_select = "SELECT email,password FROM registration where email='$_SESSION[email]'and password='$password'";
+         $stmt = $conn->query($sql_select);
+         $myprofile = $stmt->fetchAll();
+         $username=$stmt->fetch('username');
+         if(count($myprofile)==1){
+            echo "Logged user:"$username;
+            $sql_select = "SELECT * FROM adposts where email='$_SESSION[email]'";
+                $stmt = $conn->query($sql_select);
+                $adposts = $stmt->fetchAll(); 
+                if(count($adposts) > 0) {
+                    echo "<div class=container-narrow>";
+                    echo "<div class=panel panel-default>";
+                    echo "<div style=height:50px></div>";
+                    echo "<legend>Ads posted</legend>";
+                    echo "<table class='table table-bordered'>";
+                    echo "<tr><th>Ad title</th>";
+                    echo "<th>Description</th>";
+                    echo "<th>Price</th>";
+                    echo "<th>Seller's name</th>";
+                    echo "<th>Phone no</th>";
+                    echo "<th>Location</th></tr>";
+                    foreach($adposts as $adpost) {
+                        echo "<tr><td>".$adpost['adtitle']."</td>";
+                        echo "<td>".$adpost['description']."</td>";
+                        echo "<td>".$adpost['price']."</td>";
+                        echo "<td>".$adpost['contact_name']."</td>";
+                        echo "<td>".$adpost['phoneno']."</td>";
+                        echo "<td>".$adpost['location']."</td></tr>";
+                    }
+                    echo "</table>";
+                    echo "</div>";
+                    echo "</div>";
+                } else {
+                    echo "<h3></h3>";
+                }
+            
+         }
+
+    }
+?>
         </body>
 </html>

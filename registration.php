@@ -43,29 +43,4 @@
     echo "<h3>Your're registered!</h3>";
     }
  
-   /* $sql_select = "SELECT * FROM register";
-    $stmt = $conn->query($sql_select);
-    $registrants = $stmt->fetchAll(); 
-    if(count($registrants) > 0) {
-        echo "<h2>People who are registered:</h2>";
-     echo "<table>";
-        echo "<tr><th>Name</th>";
-        echo "<th>Email</th>";
-        echo "<th>phoneno</th>";
-        echo "<th>location</th></tr>";
-        foreach($registrants as $registrant) {
-            echo "<tr><td>".$registrant['username']."</td>";
-            echo "<td>".$registrant['email']."</td>";
-            echo "<td>".$registrant['phoneno']."</td>";
-			 echo "<td>".$registrant['location']."</td></tr>";
-        }
-        echo "</table>";
-      
-    } else
-	{
-        echo "<h3>No one is currently registered.</h3>";
-    }
-	
-
-	*/
 ?>
