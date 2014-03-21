@@ -1,8 +1,42 @@
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<link rel="stylesheet" href="css/bootstrap.css"/>
+<link href="css/bootstrap.css" rel="stylesheet" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>eZeefieds</title><style type="text/css">
+      body {
+        padding-top: 20px;
+        padding-bottom: 40px;
+      }
+
+      /* Custom container */
+      .container-narrow {
+        margin: 0 auto;
+        max-width: 900px;
+      }
+      .container-narrow > hr {
+        margin: 30px 0;
+      }
+          </style>
 </head>
-<body>vbnnbbbbbbbbbnv
+
+<body><nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="navbar-inner ">
+    <a class="brand" href="index.php">ezeefieds</a>
+      <ul class="nav navbar-nav">
+        <li class=""><a href="index.php">Home</a></li>
+        <li><a href="registration.html">Create Account</a></li>
+        
+      </ul>
+      
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="login.html">Sign in</a></li>
+        <li><a href="postcategorypage.html">Post ad</a></li>
+      </ul>
+    
+  </div><!-- /.container-fluid -->
+</nav>
+<p>vbnnbbbbbbbbbnv</p>
 <?php
 //session_start();
     try {
