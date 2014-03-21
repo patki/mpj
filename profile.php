@@ -2,7 +2,7 @@
 <head>
 <link rel="stylesheet" href="css/bootstrap.css"/>
 </head>
-<body>
+<body>vbnnbbbbbbbbbnv
 <?php
 //session_start();
     try {
@@ -20,10 +20,10 @@
     if(!empty($_POST['email'])){
         $email=$_POST['email'];
         $password=$_POST['password'];
-         $sql_select = "SELECT email,password FROM registration where email='$email'and password='$password'";
+         $sql_select = "SELECT * FROM registration where email='$email'and password='$password'";
          $stmt = $conn->query($sql_select);
          $myprofile = $stmt->fetchAll();
-         $username=$stmt->fetch('username');
+         //$username=$stmt->fetch('username');
          if(count($myprofile)==1){
             echo "Logged user:"$username;
             $sql_select = "SELECT * FROM adposts where email='$email'";
