@@ -13,7 +13,7 @@ include "nav.html";
     catch(Exception $e){
         die(var_dump($e));
     }
-    $sessionuser=$_session['email'];
+    $sessionuser=$_SESSION['email'];
 	//echo "progilre";
     if(!empty($_POST['email'])){
         $email=$_POST['email'];
