@@ -7,10 +7,6 @@
 <body>
 <?php
 session_start();
-    // DB connection info
-    //TODO: Update the values for $host, $user, $pwd, and $db
-    //using the values you retrieved earlier from the portal.
-    // Connect to database.
     try {
           $conn = new PDO ( "sqlsrv:server = tcp:pocxo8zlbf.database.windows.net,1433; Database =classifieds", "sambaridly", "Butter@dosa112");      
             $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
@@ -22,17 +18,17 @@ session_start();
     catch(Exception $e){
         die(var_dump($e));
     }
-	
-    if(!empty($_SESSION['email'])){
+	echo "progilre";
+    if(!empty($_POST['email'])){
         $email=$_POST['email'];
         $password=$_POST['password'];
-         $sql_select = "SELECT email,password FROM registration where email='$_SESSION[email]'and password='$password'";
+         $sql_select = "SELECT email,password FROM registration where email='$email'and password='$password'";
          $stmt = $conn->query($sql_select);
          $myprofile = $stmt->fetchAll();
          $username=$stmt->fetch('username');
          if(count($myprofile)==1){
             echo "Logged user:"$username;
-            $sql_select = "SELECT * FROM adposts where email='$_SESSION[email]'";
+            $sql_select = "SELECT * FROM adposts where email='$email'";
                 $stmt = $conn->query($sql_select);
                 $adposts = $stmt->fetchAll(); 
                 if(count($adposts) > 0) {
