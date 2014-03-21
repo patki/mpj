@@ -21,7 +21,7 @@ include "nav.html";
          $myprofile = $stmt->fetchAll();
          //$username=$stmt->fetch('$email');
          if(count($myprofile)==1){
-            echo "Logged user:" $email;
+            //echo "Logged user:"; $email 
             $sql_select = "SELECT * FROM adposts where email='$email'";
                 $stmt = $conn->query($sql_select);
                 $adposts = $stmt->fetchAll(); 
