@@ -13,12 +13,11 @@ include "nav.html";
     catch(Exception $e){
         die(var_dump($e));
     }
-    $sessionuser=$_SESSION['email'];
 	//echo "progilre";
     if(!empty($_POST['email'])){
         $email=$_POST['email'];
         $password=$_POST['password'];
-         $sql_select = "SELECT username FROM registration where email='$sessionuser'and password='$password'";
+         $sql_select = "SELECT username FROM registration where email='$email'and password='$password'";
          $stmt = $conn->query($sql_select);
          $myprofile = $stmt->fetchAll();
          //$username=$stmt->fetch('$email');
@@ -26,7 +25,7 @@ include "nav.html";
             foreach($myprofile as $adpost)
                         echo "<p>".$adpost['username']."</p>";
         
-            $sql_select = "SELECT * FROM adposts where email='$sessionuser'";
+            $sql_select = "SELECT * FROM adposts where email='$email'";
                 $stmt = $conn->query($sql_select);
                 $adposts = $stmt->fetchAll(); 
                 if(count($adposts) > 0) {
