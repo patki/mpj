@@ -16,12 +16,14 @@ include "nav.html";
     if(!empty($_POST['email'])){
         $email=$_POST['email'];
         $password=$_POST['password'];
-         $sql_select = "SELECT * FROM registration where email='$email'and password='$password'";
+         $sql_select = "SELECT username FROM registration where email='$email'and password='$password'";
          $stmt = $conn->query($sql_select);
          $myprofile = $stmt->fetchAll();
          //$username=$stmt->fetch('$email');
          if(count($myprofile)==1){
-            echo "Logged user:".$myprofile['username'].; 
+            foreach($myprofile as $adpost)
+                        echo "<p>".$adpost['username']."</p>";
+        
             $sql_select = "SELECT * FROM adposts where email='$email'";
                 $stmt = $conn->query($sql_select);
                 $adposts = $stmt->fetchAll(); 
