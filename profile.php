@@ -1,22 +1,24 @@
 <?php
-//session_start();
+ob_start();
+session_start();
 include "nav.html";
     try {
           $conn = new PDO ( "sqlsrv:server = tcp:pocxo8zlbf.database.windows.net,1433; Database =classifieds", "sambaridly", "Butter@dosa112");      
             $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
             if ($conn) {
-                echo "success";
+                //echo "success";
             }
     }
     
     catch(Exception $e){
         die(var_dump($e));
     }
-	echo "progilre";
+    $sessionuser=$_session['email'];
+	//echo "progilre";
     if(!empty($_POST['email'])){
         $email=$_POST['email'];
         $password=$_POST['password'];
-         $sql_select = "SELECT username FROM registration where email='$email'and password='$password'";
+         $sql_select = "SELECT username FROM registration where email='$sessionuser'and password='$password'";
          $stmt = $conn->query($sql_select);
          $myprofile = $stmt->fetchAll();
          //$username=$stmt->fetch('$email');
@@ -24,7 +26,7 @@ include "nav.html";
             foreach($myprofile as $adpost)
                         echo "<p>".$adpost['username']."</p>";
         
-            $sql_select = "SELECT * FROM adposts where email='$email'";
+            $sql_select = "SELECT * FROM adposts where email='$sessionuser'";
                 $stmt = $conn->query($sql_select);
                 $adposts = $stmt->fetchAll(); 
                 if(count($adposts) > 0) {
