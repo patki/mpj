@@ -13,16 +13,14 @@ try {
         die(var_dump($e));
     }
 $category=$_GET['id'];
-    echo "<div class=container-narrow>";
-    echo "<div class=panel panel-default>";
-    echo "<div style=height:50px></div>";
-    echo "<legend>Ads realted to :."$category".</legend>";
     $sql_select = "SELECT * FROM adposts where choosen_category='$category'";
     $stmt = $conn->query($sql_select);
     $adposts = $stmt->fetchAll(); 
     if(count($adposts) > 0) {
-        
-       // echo "<legend>Ads posted</legend>";
+        echo "<div class=container-narrow>";
+        echo "<div class=panel panel-default>";
+        echo "<div style=height:50px></div>";
+        echo "<legend>Ads posted."$category".</legend>";
         echo "<table class='table table-bordered'>";
         echo "<tr><th>Ad title</th>";
         echo "<th>Description</th>";
@@ -39,13 +37,11 @@ $category=$_GET['id'];
             echo "<td>".$adpost['location']."</td></tr>";
         }
         echo "</table>";
+        echo "</div>";
+        echo "</div>";
     } else {
-        
-        echo "<h3>No ads present related to this post</h3>";
-       
+        echo "<h3></h3>";
     }
-echo "</div>";
-echo "</div>";
 echo "</body>";
 
 ?>
