@@ -16,7 +16,7 @@ try {
     echo "<div class=container-narrow>";
     echo "<div class=panel panel-default>";
     echo "<div style=height:50px></div>";
-    echo "<legend>Ads posted:  ".$category."</legend>";
+    echo "<legend>Ads related to :  ".$category."</legend>";
     $sql_select = "SELECT * FROM adposts where choosen_category='$category'";
     $stmt = $conn->query($sql_select);
     $adposts = $stmt->fetchAll(); 
