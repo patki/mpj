@@ -20,7 +20,7 @@ $category=$_GET['id'];
         echo "<div class=container-narrow>";
         echo "<div class=panel panel-default>";
         echo "<div style=height:50px></div>";
-        echo "<legend>Ads posted."$category".</legend>";
+        echo "<legend>Ads posted".$category."</legend>";
         echo "<table class='table table-bordered'>";
         echo "<tr><th>Ad title</th>";
         echo "<th>Description</th>";
