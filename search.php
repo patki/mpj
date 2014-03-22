@@ -1,5 +1,6 @@
 <?php
 include "nav.html";
+echo "<link href='css/bootstrap.css' rel='stylesheet' />";
 try {
           $conn = new PDO ( "sqlsrv:server = tcp:pocxo8zlbf.database.windows.net,1433; Database =classifieds", "sambaridly", "Butter@dosa112");      
             $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
@@ -12,7 +13,8 @@ try {
         die(var_dump($e));
     }
 $category=$_GET['id'];
-echo "<link href='css/bootstrap.css' rel='stylesheet' />";
+    echo "<div style=height:50px></div>";
+    echo "<legend>Ads realted to :."$category".</legend>";
     $sql_select = "SELECT * FROM adposts where choosen_category='$category'";
     $stmt = $conn->query($sql_select);
     $adposts = $stmt->fetchAll(); 
@@ -20,7 +22,7 @@ echo "<link href='css/bootstrap.css' rel='stylesheet' />";
         echo "<div class=container-narrow>";
         echo "<div class=panel panel-default>";
         echo "<div style=height:50px></div>";
-        echo "<legend>Ads posted</legend>";
+       // echo "<legend>Ads posted</legend>";
         echo "<table class='table table-bordered'>";
         echo "<tr><th>Ad title</th>";
         echo "<th>Description</th>";
@@ -40,7 +42,11 @@ echo "<link href='css/bootstrap.css' rel='stylesheet' />";
         echo "</div>";
         echo "</div>";
     } else {
-        echo "<h3></h3>";
+        echo "<div class=container-narrow>";
+        echo "<div class=panel panel-default>";
+        echo "<h3>No ads present related to this post</h3>";
+        echo "</div>";
+        echo "</div>";
     }
 echo "</body>";
 
