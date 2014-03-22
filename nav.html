@@ -65,7 +65,7 @@
         <div class="form-group">
         
         <input type="text" class="form-control" placeholder="" name="category_id"value="<?php echo $_GET['id']?>" hidden>
-        <select class="span3" name="sortby" onchange="this.form.submit();" >
+        <select class="span3" name="sortby" onchange="this.form.submit();" value="<?php echo $_GET['id']?>">
           <option value="">Select to sort by</option>
           <option value="mostrecent">Most recent ads</option>
           <option value="low_to_high">Price:Low to high</option>
