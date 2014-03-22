@@ -11,7 +11,6 @@ try {
     catch(Exception $e){
         die(var_dump($e));
     }
-
 $category=$_GET['id'];
 echo "<link href='css/bootstrap.css' rel='stylesheet' />";
     $sql_select = "SELECT * FROM adposts where choosen_category='$category'";
