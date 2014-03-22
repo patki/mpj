@@ -16,8 +16,8 @@ $sql_select = "SELECT * FROM adposts";
     $stmt = $conn->query($sql_select);
     $adposts = $stmt->fetchAll(); 
     if(count($adposts) > 0) {
-        /*echo "<div class=container-narrow>";
-        echo "<div class=panel panel-default>";*/
+        echo "<div class=container-narrow>";
+        echo "<div class=panel panel-default>";
         echo "<legend>Ads posted</legend>";
         echo "<table class='table table-bordered'>";
         echo "<tr><th>Ad title</th>";
@@ -35,8 +35,8 @@ $sql_select = "SELECT * FROM adposts";
             echo "<td>".$adpost['location']."</td></tr>";
         }
         echo "</table>";
-        /*echo "</div>";
-        echo "</div>";*/
+        echo "</div>";
+        echo "</div>";
     } else {
         echo "<h3></h3>";
     }
