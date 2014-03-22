@@ -13,7 +13,7 @@ try {
         die(var_dump($e));
     }
     $category=$_GET['id'];
-    $sortby=$_GET['sortby'];
+    $sortby=$_GET['mid'];
     $category_id=$_GET['category_id'];
     echo "<div class=container-narrow>";
     echo "<div class=panel panel-default>";
