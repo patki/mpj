@@ -13,11 +13,13 @@ try {
         die(var_dump($e));
     }
     $category=$_GET['id'];
+    $sortby=$_GET['sortby'];
+    $category_id=$_GET['category_id'];
     echo "<div class=container-narrow>";
     echo "<div class=panel panel-default>";
     echo "<div style=height:50px></div>";
     echo "<legend>Ads related to :  ".$category."</legend>";
-    $sql_select = "SELECT * FROM adposts where choosen_category='$category'";
+    $sql_select = "SELECT * FROM adposts where choosen_category='$category' OR choosen_category='$category_id'";
     $stmt = $conn->query($sql_select);
     $adposts = $stmt->fetchAll(); 
     if(count($adposts) > 0) {
