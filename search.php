@@ -11,7 +11,7 @@ try {
     catch(Exception $e){
         die(var_dump($e));
     }
-$sortby=$_GET['sortby']
+$sortby=$_POST['sortby']
 $category=$_GET['id'];
 
 echo "<link href='css/bootstrap.css' rel='stylesheet' />";
@@ -74,7 +74,7 @@ echo "<link href='css/bootstrap.css' rel='stylesheet' />";
       } 
     }
     else{
-    $sql_select = "SELECT * FROM adposts where choosen_category='$category'and ORDER BY time ASC";
+    $sql_select = "SELECT * FROM adposts where choosen_category='$category'";
     $stmt = $conn->query($sql_select);
     $adposts = $stmt->fetchAll(); 
     if(count($adposts) > 0) {
