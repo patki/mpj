@@ -11,17 +11,6 @@ try {
     catch(Exception $e){
         die(var_dump($e));
     }
-echo "<form class=form-horizontal method=GET action=search.php enctype=multipart/form-data>
-     <div class=control-group>
-      <label class=control-label for=inputEmail>Sortby</label>
-       <div class=controls>
-        <select class=span3 name=sortby onchange=this.form.submit()>
-          <option value=mostrecent>Most recent ads</option>
-          <option value=low_to_high>Price:Low to high</option>
-          <option value=high_to_low>Price:High to low</option>
-        </select>
-       </div>
-     </div></form>";
 $sortby=$_GET['sortby']
 $category=$_GET['id'];
 
