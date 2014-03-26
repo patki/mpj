@@ -42,10 +42,10 @@
         catch(Exception $e) {
         die(var_dump($e));
     }
-    if ($stmt) {
-        header('Location:login.html');
+    //if ($stmt) {
+       // header('Location:login.html');
         echo "<h3>Your're registered!</h3>";
-    }
+    //}
     
     }
  
