@@ -14,7 +14,7 @@ try {
     }
     $category=$_GET['id'];
     $sortby=$_GET['mid'];
-    $category_id=getCookie("id");
+    $category_id=getCookie("choosen_category");
     echo "<div class=container-narrow>";
     echo "<div class=panel panel-default>";
     echo "<div style=height:50px></div>";
