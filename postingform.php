@@ -28,7 +28,7 @@ include "postingform.html";
         $email = $_POST['email'];
         $phoneno = $_POST['phoneno'];
         $location = $_POST['location'];
-        $timedate = date("Y-m-d");
+        $timedate = date("Y-m-d H:i:s");
 		  
         // Insert data
 
