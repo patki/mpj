@@ -22,18 +22,20 @@
         $email = $_POST['email'];
         $password = $_POST['password'];
 		$phoneno = $_POST['phoneno'];
+        $address=$_POST['address'];
 		$location = $_POST['location'];
 		  
         // Insert data
 
-        $sql_insert = "INSERT INTO registration (username,email,password,phoneno,location) 
-                   VALUES (?,?,?,?,?)";
+        $sql_insert = "INSERT INTO registration (username,email,password,phoneno,location,address) 
+                   VALUES (?,?,?,?,?,?)";
         $stmt = $conn->prepare($sql_insert);
         $stmt->bindValue(1, $username);
         $stmt->bindValue(2, $email);
         $stmt->bindValue(3, $password);
 		$stmt->bindValue(4, $phoneno);
 		$stmt->bindValue(5, $location);
+        $stmt->bindValue(6, $address);
 		
         $stmt->execute();
        }
