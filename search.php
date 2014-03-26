@@ -1,6 +1,8 @@
 <?php
 include "nav.html";
-echo "<link href='css/bootstrap.css' rel='stylesheet' />";
+echo "<link href='css/bootstrap.css' rel='stylesheet' />
+
+<script src=js/cookies.js></script>";
 try {
           $conn = new PDO ( "sqlsrv:server = tcp:pocxo8zlbf.database.windows.net,1433; Database =classifieds", "sambaridly", "Butter@dosa112");      
             $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
@@ -14,7 +16,7 @@ try {
     }
     $category=$_GET['id'];
     $sortby=$_GET['mid'];
-    $category_id=$_GET['category_id'];
+    $category_id=getCookie("id");
     echo "<div class=container-narrow>";
     echo "<div class=panel panel-default>";
     echo "<div style=height:50px></div>";
@@ -25,8 +27,8 @@ try {
          $sql_select = "SELECT * FROM adposts  ORDER BY timedate DESC";
     }
     else if($sortby==low_to_high){
-        /*$sql_select = "SELECT * FROM adposts where choosen_category='$category' OR choosen_category='$category_id' ORDER BY price ASC";*/
-        $sql_select = "SELECT * FROM adposts  ORDER BY price ASC";
+        $sql_select = "SELECT * FROM adposts where choosen_category='$category' OR choosen_category='$category_id' ORDER BY price ASC";
+       // $sql_select = "SELECT * FROM adposts  ORDER BY price ASC";
     }
     elseif ($sortby==high_to_low) {
         $sql_select = "SELECT * FROM adposts  ORDER BY price DESC";
