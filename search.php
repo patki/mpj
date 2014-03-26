@@ -14,7 +14,7 @@ try {
     }
     $category=$_GET['id'];
     $sortby=$_GET['mid'];
-    $category_id=getCookie("choosen_category");
+    $category_id=$_GET['category_id'];
     echo "<div class=container-narrow>";
     echo "<div class=panel panel-default>";
     echo "<div style=height:50px></div>";
@@ -25,8 +25,8 @@ try {
          $sql_select = "SELECT * FROM adposts  ORDER BY timedate DESC";
     }
     else if($sortby==low_to_high){
-        $sql_select = "SELECT * FROM adposts where choosen_category='$category' OR choosen_category='$category_id' ORDER BY price ASC";
-       // $sql_select = "SELECT * FROM adposts  ORDER BY price ASC";
+        /*$sql_select = "SELECT * FROM adposts where choosen_category='$category' OR choosen_category='$category_id' ORDER BY price ASC";*/
+        $sql_select = "SELECT * FROM adposts  ORDER BY price ASC";
     }
     elseif ($sortby==high_to_low) {
         $sql_select = "SELECT * FROM adposts  ORDER BY price DESC";
