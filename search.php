@@ -1,8 +1,6 @@
 <?php
 include "nav.html";
-echo "<link href='css/bootstrap.css' rel='stylesheet' />
-
-<script src=js/cookies.js></script>";
+echo "<link href='css/bootstrap.css' rel='stylesheet' />";
 try {
           $conn = new PDO ( "sqlsrv:server = tcp:pocxo8zlbf.database.windows.net,1433; Database =classifieds", "sambaridly", "Butter@dosa112");      
             $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
