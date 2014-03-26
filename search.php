@@ -19,7 +19,7 @@ try {
     echo "<div class=panel panel-default>";
     echo "<div style=height:50px></div>";
     echo "<legend>Ads related to :  ".$category."</legend>";
-    $sql_select = "SELECT * FROM adposts where choosen_category='$category' OR choosen_category='$category_id'";
+    $sql_select = "SELECT * FROM adposts where choosen_category='$category' OR choosen_category='$category_id' ORDER BY timedate DESC";
     if($sortby==low_to_high){
         /*$sql_select = "SELECT * FROM adposts where choosen_category='$category' OR choosen_category='$category_id' ORDER BY price ASC";*/
         $sql_select = "SELECT * FROM adposts  ORDER BY price ASC";
