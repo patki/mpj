@@ -16,7 +16,7 @@
         die(var_dump($e));
     }
     // Insert registration info
-    if(!empty($_POST)) {
+    if(!empty($_POST['username'])&&!empty($_POST['email'])&&!empty($_POST['password'])&&!empty($_POST['phoneno'])) {
     try {
         $username = $_POST['username'];
         $email = $_POST['email'];
