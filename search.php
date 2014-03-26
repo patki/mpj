@@ -22,7 +22,7 @@ try {
     if(empty($sortby))
     $sql_select = "SELECT * FROM adposts where choosen_category='$category' OR choosen_category='$category_id' ORDER BY timedate DESC";
     if ($sortby==mostrecent) {
-         $sql_select = "SELECT * FROM adposts  ORDER BY timedate ASC";
+         $sql_select = "SELECT * FROM adposts  ORDER BY timedate DESC";
     }
     else if($sortby==low_to_high){
         /*$sql_select = "SELECT * FROM adposts where choosen_category='$category' OR choosen_category='$category_id' ORDER BY price ASC";*/
