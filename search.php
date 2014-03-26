@@ -21,10 +21,11 @@ try {
     echo "<legend>Ads related to :  ".$category."</legend>";
     $sql_select = "SELECT * FROM adposts where choosen_category='$category' OR choosen_category='$category_id'";
     if($sortby==low_to_high){
-        $sql_select = "SELECT * FROM adposts where choosen_category='$category' OR choosen_category='$category_id' ORDER BY price ASC";
+        /*$sql_select = "SELECT * FROM adposts where choosen_category='$category' OR choosen_category='$category_id' ORDER BY price ASC";*/
+        $sql_select = "SELECT * FROM adposts  ORDER BY price ASC";
     }
     elseif ($sortby==high_to_low) {
-        $sql_select = "SELECT * FROM adposts where choosen_category='$category' OR choosen_category='$category_id' ORDER BY price DESC";
+        $sql_select = "SELECT * FROM adposts  ORDER BY price DESC";
     }
     
     $stmt = $conn->query($sql_select);
