@@ -28,11 +28,12 @@ include "postingform.html";
         $email = $_POST['email'];
         $phoneno = $_POST['phoneno'];
         $location = $_POST['location'];
+        $timedate = date("Y-m-d");
 		  
         // Insert data
 
-        $sql_insert = "INSERT INTO adposts (choosen_category,adtitle,topic_category,description,price,contact_name,email,phoneno,location) 
-                   VALUES (?,?,?,?,?,?,?,?,?)";
+        $sql_insert = "INSERT INTO adposts (choosen_category,adtitle,topic_category,description,price,contact_name,email,phoneno,location,timedate) 
+                   VALUES (?,?,?,?,?,?,?,?,?,?)";
         $stmt = $conn->prepare($sql_insert);
         $stmt->bindValue(1, $choosen_category);
         $stmt->bindValue(2, $adtitle);
@@ -44,6 +45,7 @@ include "postingform.html";
         $stmt->bindValue(7, $email);
         $stmt->bindValue(8, $phoneno);
         $stmt->bindValue(9, $location);
+        $stmt->bindValue(10,$timedate);
         $stmt->execute();
        }
         catch(Exception $e) {
