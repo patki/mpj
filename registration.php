@@ -42,7 +42,7 @@
         catch(Exception $e) {
         die(var_dump($e));
     }
-    if ($sql_insert) {
+    if ($stmt) {
         header('Location:login.html');
         echo "<h3>Your're registered!</h3>";
     }
