@@ -1,7 +1,7 @@
 
 <?php
 ob_start();
-session_start();
+session_start("email");
 include "login.html";
     // DB connection info
     //TODO: Update the values for $host, $user, $pwd, and $db
@@ -17,18 +17,18 @@ include "login.html";
         die(var_dump($e));
     }
 	  $check=false;
-   if(!empty($_POST["username"])&&!empty($_POST["password"]))
+   if(!empty($_POST["email"])&&!empty($_POST["password"]))
    {
-  $sql_select = "SELECT * FROM registration where username='".$_POST['username']. "' and password='".$_POST['password']."';";
+  $sql_select = "SELECT * FROM registration where email='".$_POST['email']."'AND password='".$_POST['password']."';";
     $stmt = $conn->query($sql_select);
     $registrant = $stmt->fetchAll(); 
       if(count($registrant) ==1)
       {
-		  echo $_SESSION["username"]=$_POST["username"];
-		//header('location:profile.php');
+		  echo $_SESSION["email"]=$_POST["email"];
+		 header('location:profile.php');
 		 // header('location:profile.php?id='+$_POST["username"]);
 	  }
-	  else  if(count($registrant) ==0)
+	  else if(count($registrant) ==0)
 	  {
 		  print "your username is $username ";
 	  echo "<b> Invalid email id or password<b>";
