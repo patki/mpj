@@ -13,7 +13,7 @@ include "profile.html";
     catch(Exception $e){
         die(var_dump($e));
     }
-	//echo "progilre";
+	
     if(!empty($_POST['email'])){
         $email=$_POST['email'];
         $password=$_POST['password'];
@@ -25,8 +25,7 @@ include "profile.html";
             foreach($myprofile as $adpost)
                         echo "<p>".$adpost['username']."</p>";
                   echo  $_SESSION['username']=$adpost['username'];
-        
-            $sql_select = "SELECT * FROM adposts where email='$email'";
+                $sql_select = "SELECT * FROM adposts where email='$email'";
                 $stmt = $conn->query($sql_select);
                 $adposts = $stmt->fetchAll(); 
                 if(count($adposts) > 0) {
@@ -55,8 +54,9 @@ include "profile.html";
                 } 
             
          }
-         else {
-                    echo "<h3>Invalid username or password</h3>";
-                }
+          if(count($myprofile)!=1){
+            echo "<div style=height:50px></div>";
+            echo "<h1>Invalid username or password</h1>";
+        }
     }
 ?>
