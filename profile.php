@@ -52,10 +52,11 @@ include "profile.html";
                     echo "</table>";
                     echo "</div>";
                     echo "</div>";
-                } else {
-                    echo "<h3>fgfhgghjj</h3>";
-                }
+                } 
             
          }
+         else {
+                    echo "<h3>Invalid username or password</h3>";
+                }
     }
 ?>
