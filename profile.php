@@ -23,7 +23,7 @@ session_start("username");
          if(count($myprofile)==1){
             foreach($myprofile as $adpost)
                         echo "<p>".$adpost['username']."</p>";
-                    $_SESSION['username']=echo "<p>".$adpost['username']."</p>";
+                    $_SESSION['username']=$adpost['username'];
         
             $sql_select = "SELECT * FROM adposts where email='$email'";
                 $stmt = $conn->query($sql_select);
