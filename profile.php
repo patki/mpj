@@ -1,6 +1,7 @@
 <?php
 ob_start();
-session_start("username");
+session_start();
+$_SESSION['username']=$_POST['email'];
 include "profile.html";
     try {
           $conn = new PDO ( "sqlsrv:server = tcp:pocxo8zlbf.database.windows.net,1433; Database =classifieds", "sambaridly", "Butter@dosa112");      
@@ -24,7 +25,7 @@ include "profile.html";
          if(count($myprofile)==1){
             foreach($myprofile as $adpost)
                         echo "<p>".$adpost['username']."</p>";
-                  echo  $_SESSION['username']=$adpost['username'];
+                  //echo  $_SESSION['username']=$adpost['username'];
                 $sql_select = "SELECT * FROM adposts where email='$email'";
                 $stmt = $conn->query($sql_select);
                 $adposts = $stmt->fetchAll(); 
