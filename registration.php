@@ -1,9 +1,5 @@
 <?php
-//include "registration.html";
-    // DB connection info
-    //TODO: Update the values for $host, $user, $pwd, and $db
-    //using the values you retrieved earlier from the portal.
-    // Connect to database.
+include "login.html";
     try {
           $conn = new PDO ( "sqlsrv:server = tcp:pocxo8zlbf.database.windows.net,1433; Database =classifieds", "sambaridly", "Butter@dosa112");      
             $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
@@ -17,7 +13,7 @@
     }
     // Insert registration info
     if(!empty($_POST['username'])&&!empty($_POST['email'])&&!empty($_POST['password'])&&!empty($_POST['phoneno'])) {
-    try {
+        try {
         $username = $_POST['username'];
         $email = $_POST['email'];
         $password = $_POST['password'];
@@ -41,11 +37,12 @@
        }
         catch(Exception $e) {
         die(var_dump($e));
-    }
-    //if ($stmt) {
+       }
+      //if ($stmt) {
        // header('Location:login.html');
+        echo "<div style=height:50px></div>";
         echo "<h3>Your're registered!</h3>";
-    //}
+       //}
     
     }
  
