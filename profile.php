@@ -14,6 +14,7 @@ include "profile.html";
 	
     echo $cookieid=getCookie("username");
     $email=$_POST['email'];
+    $password=$_POST['password'];
          $sql_select = "SELECT username FROM registration where email='$email'and password='$password'";
          $stmt = $conn->query($sql_select);
          $myprofile = $stmt->fetchAll();
