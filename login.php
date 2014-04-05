@@ -11,13 +11,11 @@
         die(var_dump($e));
     }
 	  $check=false;
-    $sql_select = "SELECT password FROM registration where email='".$_POST['email']."'AND password='".$_POST['password']."';";
+    $sql_select = "SELECT password FROM registration where email='".$_GET['email']."'AND password='".$_GET['password']."';";
     $stmt = $conn->query($sql_select);
-    $registrant = $stmt->fetchAll(); 
+    $registrant = $stmt->fetch(); 
     if($registrant ==$_GET['password']){
       $check=true;
 		  
 	  }
-	
-   }
 ?>
