@@ -11,7 +11,7 @@ include "profile.html";
     catch(Exception $e){
         die(var_dump($e));
     }
-	
+	$check=false;
     echo $loggedusername=$_GET['username'];
 
 
@@ -22,10 +22,11 @@ include "profile.html";
          $stmt = $conn->query($sql_select);
          $myprofile = $stmt->fetchAll();
          //$username=$stmt->fetch('$email');
-         if(count($myprofile)==1){
-            foreach($myprofile as $adpost)
-                        echo "<p>".$adpost['username']."</p>";
-                  //echo  $_SESSION['username']=$adpost['username'];
+        if(count($myprofile)==1){
+            $check=true;
+             /* foreach($myprofile as $adpost)
+                 echo "<p>".$adpost['username']."</p>";
+                //echo  $_SESSION['username']=$adpost['username'];*/
                 $sql_select = "SELECT * FROM adposts where email='$email'";
                 $stmt = $conn->query($sql_select);
                 $adposts = $stmt->fetchAll(); 
