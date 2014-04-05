@@ -11,15 +11,15 @@ include "profile.html";
     catch(Exception $e){
         die(var_dump($e));
     }
-	$check=false;
+	
     echo $cookieid=getCookie("username");
-    $email=$_GET['id'];
+    $email=$_POST['email'];
          $sql_select = "SELECT username FROM registration where email='$email'and password='$password'";
          $stmt = $conn->query($sql_select);
          $myprofile = $stmt->fetchAll();
          //$username=$stmt->fetch('$email');
         if(count($myprofile)==1){
-            $check=true;
+            
              /* foreach($myprofile as $adpost)
                  echo "<p>".$adpost['username']."</p>";
                 //echo  $_SESSION['username']=$adpost['username'];*/
