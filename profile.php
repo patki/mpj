@@ -1,5 +1,5 @@
 <?php
-include "profile.html";
+include "nav.html";
     try {
           $conn = new PDO ( "sqlsrv:server = tcp:pocxo8zlbf.database.windows.net,1433; Database =classifieds", "sambaridly", "Butter@dosa112");      
             $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
@@ -12,18 +12,14 @@ include "profile.html";
         die(var_dump($e));
     }
 	
-    echo $cookieid=getCookie("username");
+    echo $cookieid=$_COOKIE['username'];
+    echo $uid=getCookie("username");
     $email=$_POST['email'];
     $password=$_POST['password'];
          $sql_select = "SELECT username FROM registration where email='$email'and password='$password'";
          $stmt = $conn->query($sql_select);
-         $myprofile = $stmt->fetchAll();
-         //$username=$stmt->fetch('$email');
+         $myprofile = $stmt->fetch();
         if(count($myprofile)==1){
-            
-             /* foreach($myprofile as $adpost)
-                 echo "<p>".$adpost['username']."</p>";
-                //echo  $_SESSION['username']=$adpost['username'];*/
                 $sql_select = "SELECT * FROM adposts where email='$email'";
                 $stmt = $conn->query($sql_select);
                 $adposts = $stmt->fetchAll(); 
