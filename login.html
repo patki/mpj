@@ -41,7 +41,27 @@
         margin-top: 28px;
       }*/
     </style>
-  <script src="js/cookie.js"></script>
+<script src="js/cookies.js"></script>
+<script>
+var username="";
+var password="";
+
+
+function login()
+{
+  username=document.getElementById('email').value;
+  password=document.getElementById('password').value;   
+  setCookie("username",username,1); 
+  var xhr = new XMLHttpRequest();
+        xhr.open('GET', 'login.php?id='+username,false);
+        xhr.send(null);
+        var response = xhr.responseText;
+        if(response==password)
+        alert("welcome "+getCookie("username"));
+        else
+        alert("wrong username or password");  
+}
+</script>
 </head>
 
 <body>
@@ -83,7 +103,7 @@
   </div>
   <div class="control-group">
     <div class="controls">
-      <button type="submit" class="btn">Sign in</button>
+      <button type="submit" class="btn" onClick="login();">Sign in</button>
     </div>
   </div>
  
