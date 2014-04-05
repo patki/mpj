@@ -12,7 +12,7 @@ include "nav.html";
         die(var_dump($e));
     }
 	
-    echo $cookieid=$_COOKIE['username'];
+     $cookieid=$_COOKIE['username'];
    // echo $uid=getCookie("username");
     $email=$_POST['email'];
     $password=$_POST['password'];
@@ -20,7 +20,7 @@ include "nav.html";
          $stmt = $conn->query($sql_select);
          $myprofile = $stmt->fetchAll();
         if(count($myprofile)==1){
-                $sql_select = "SELECT * FROM adposts where email='$email'";
+                $sql_select = "SELECT * FROM adposts where email='$cookieid'";
                 $stmt = $conn->query($sql_select);
                 $adposts = $stmt->fetchAll(); 
                 if(count($adposts) > 0) {
