@@ -53,7 +53,7 @@ function login()
   password=document.getElementById('inputPassword').value;   
   setCookie("username",username,1); 
   var xhr = new XMLHttpRequest();
-        xhr.open('GET', 'login.php?id='+username,false);
+        xhr.open('GET', '/login.php?id='+username,false);
         xhr.send(null);
         var response = xhr.responseText;
         if(response==password)
