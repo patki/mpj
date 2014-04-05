@@ -1,7 +1,4 @@
 <?php
-ob_start();
-session_start();
-$_SESSION['username']=$_POST['email'];
 include "profile.html";
     try {
           $conn = new PDO ( "sqlsrv:server = tcp:pocxo8zlbf.database.windows.net,1433; Database =classifieds", "sambaridly", "Butter@dosa112");      
@@ -15,6 +12,9 @@ include "profile.html";
         die(var_dump($e));
     }
 	
+    echo $loggedusername=$_COOKIE['username'];
+
+
     if(!empty($_POST['email'])){
         $email=$_POST['email'];
         $password=$_POST['password'];
@@ -52,6 +52,10 @@ include "profile.html";
                     echo "</table>";
                     echo "</div>";
                     echo "</div>";
+                }
+                else{
+                    echo "<div style=height:50px></div>";
+                    echo "<legend>There are no ads posted by you</legend>";
                 } 
             
          }
