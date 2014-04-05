@@ -12,13 +12,8 @@ include "profile.html";
         die(var_dump($e));
     }
 	$check=false;
-    echo $loggedusername=$_GET['id'];
-
-
-    if(!empty($_POST['email'])){
-        $email=$_POST['email'];
-        $password=$_POST['password'];
-         $sql_select = "SELECT username FROM registration where email='$email'and password='$password'";
+    $cookieid=getCookie("username");
+         $sql_select = "SELECT username FROM registration where email='$cookieid'and password='$password'";
          $stmt = $conn->query($sql_select);
          $myprofile = $stmt->fetchAll();
          //$username=$stmt->fetch('$email');
@@ -64,5 +59,5 @@ include "profile.html";
             echo "<div style=height:50px></div>";
             echo "<h1>Invalid username or password</h1>";
         }
-    }
+    
 ?>
