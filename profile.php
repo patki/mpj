@@ -12,7 +12,7 @@ include "profile.html";
         die(var_dump($e));
     }
 	$check=false;
-    echo $loggedusername=$_GET['username'];
+    echo $loggedusername=$_GET['id'];
 
 
     if(!empty($_POST['email'])){
