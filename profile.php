@@ -12,8 +12,9 @@ include "profile.html";
         die(var_dump($e));
     }
 	$check=false;
-    $cookieid=getCookie("username");
-         $sql_select = "SELECT username FROM registration where email='$cookieid'and password='$password'";
+    echo $cookieid=getCookie("username");
+    $email=$_GET['id'];
+         $sql_select = "SELECT username FROM registration where email='$email'and password='$password'";
          $stmt = $conn->query($sql_select);
          $myprofile = $stmt->fetchAll();
          //$username=$stmt->fetch('$email');
