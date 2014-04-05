@@ -49,8 +49,8 @@ var password="";
 
 function login()
 {
-  username=document.getElementById('email').value;
-  password=document.getElementById('password').value;   
+  username=document.getElementById('inputEmail').value;
+  password=document.getElementById('inputPassword').value;   
   setCookie("username",username,1); 
   var xhr = new XMLHttpRequest();
         xhr.open('GET', 'login.php?id='+username,false);
