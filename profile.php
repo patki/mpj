@@ -13,12 +13,12 @@ include "nav.html";
     }
 	
     echo $cookieid=$_COOKIE['username'];
-    echo $uid=getCookie("username");
+   // echo $uid=getCookie("username");
     $email=$_POST['email'];
     $password=$_POST['password'];
          $sql_select = "SELECT username FROM registration where email='$email'and password='$password'";
          $stmt = $conn->query($sql_select);
-         $myprofile = $stmt->fetch();
+         $myprofile = $stmt->fetchAll();
         if(count($myprofile)==1){
                 $sql_select = "SELECT * FROM adposts where email='$email'";
                 $stmt = $conn->query($sql_select);
