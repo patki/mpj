@@ -54,6 +54,8 @@ include "nav.html";
             
          }
           if(count($myprofile)!=1){
+            setcookie("username", "", time()-3600);
+                    
             echo "<div style=height:50px></div>";
             echo "<h1>Invalid username or password</h1>";
         }
