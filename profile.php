@@ -1,125 +1,5 @@
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<link href="css/bootstrap.css" rel="stylesheet" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>ezeefieds</title>
-
- <style type="text/css">
-      body {
-        padding-top: 20px;
-        padding-bottom: 40px;
-      }
-
-      /* Custom container */
-      .container-narrow {
-        margin: 0 auto;
-        max-width: 900px;
-      }
-      .container-narrow > hr {
-        margin: 30px 0;
-      }
-
-      /* Main marketing message and sign up button */
-      .jumbotron {
-        margin: 60px 0;
-        text-align: center;
-      }
-      .jumbotron h1 {
-        font-size: 72px;
-        line-height: 1;
-      }
-      .jumbotron .btn {
-        font-size: 21px;
-        padding: 14px 24px;
-      }
-
-      /* Supporting marketing content */
-      .marketing {
-        margin: 60px 0;
-      }
-      .marketing p + h4 {
-        margin-top: 28px;
-      }
-      body{
-       /* border:5px solid;*/
-      }
-    </style>
-    <script type="text/javascript" src="js/cookies.js"></script>
-<script>
-var loggeduser=getCookie("username");
-</script>
-  </head>
-
-<body>
-  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-  <div class="navbar-inner ">
-    <a class="brand" href="index.php">ezeefieds</a>
-      <ul class="nav navbar-nav">
-        <li class=""><a href="index.php">Home</a></li>
-      </ul>
-      
-      <ul class="nav navbar-nav navbar-right">
-       <li><a href="postcategorypage.html">Post ad</a></li>
-       <li><a href="index.php">Browse ad's</a></li>
-      </ul>
-        <ul class="nav navbar-nav navbar-right">
-        <!--<input type="hidden" value="//<?php //echo $category=$_GET[id];?>">-->
-        <li><a href="/search.php?mid=mostrecent">Most Recent</a></li>
-        <li><a href="/search.php?mid=low_to_high">Price:Low to high</a></li>
-        <li><a href="/search.php?mid=high_to_low">Price:High to low</a></li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">      
-        <li><a href="profile.php"><?php echo $_COOKIE['username']?></a></li>
-        </ul>
-    
-   </div><!-- /.container-fluid -->
-  </nav>
-<div class="container-narrow">
-<div style="height:100px"></div>
-<div class="tabbable tabs-left">
-    <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
-        <li class="active"><a href="#personal" data-toggle="tab">Personal info</a></li>
-        <li><a href="#professional" data-toggle="tab">Ad's posted</a></li>
-        <li><a href="#address" data-toggle="tab">Address</a></li>
-        <li><a href="#contact" data-toggle="tab">Contact</a></li>
-    </ul>
-    <div id="my-tab-content" class="tab-content">
-        <div class="tab-pane active" id="personal">
-            <h1 style="color:#330066">about me</h1>
-            <p style="color:#603" id="name"></p>
-            <p id="age" style="color:#603"></p>
-            <p id="gender" style="color:#603"></p>
-            <p id="status" style="color:#603"></p>
-        </div>
-        <div class="tab-pane" id="professional">
-            <h1 style="color:#330066">what I do</h1>
-            <p id="company" style="color:#603"></p>
-         <p id="as" style="color:#603"></p>
-          <p id="college" style="color:#603"></p>
-           <p id="school" style="color:#603"></p>
-        </div>
-        <div class="tab-pane" id="address">
-           <h1 style="color:#330066">I live at</h1>
-           <p id="homeadd" style="color:#603"></p>
-           <p id="office" style="color:#603"></p>
-        </div>
-        <div class="tab-pane" id="contact">
-            <h1 style="color:#330066">reach me @</h1>
-           <p id="pphone" style="color:#603"></p>
-         <p id="ophone" style="color:#603"></p>
-         <p id="rphone" style="color:#603"></p>
-         <p id="pemail" style="color:#603"></p>
-         <p id="profemail" style="color:#603"></p>
-        </div>
-    </div>
-    </div>
-</div>
-</div>
-</div>
-
 <?php
+include "nav.html";
     try {
           $conn = new PDO ( "sqlsrv:server = tcp:pocxo8zlbf.database.windows.net,1433; Database =classifieds", "sambaridly", "Butter@dosa112");      
             $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
@@ -133,6 +13,13 @@ var loggeduser=getCookie("username");
     }
 	
      $cookieid=$_COOKIE['username'];
+   // echo $uid=getCookie("username");
+    $email=$_POST['email'];
+    $password=$_POST['password'];
+         $sql_select = "SELECT username FROM registration where email='$email'and password='$password'";
+         $stmt = $conn->query($sql_select);
+         $myprofile = $stmt->fetchAll();
+        if(count($myprofile)==1){
                 $sql_select = "SELECT * FROM adposts where email='$cookieid'";
                 $stmt = $conn->query($sql_select);
                 $adposts = $stmt->fetchAll(); 
@@ -165,4 +52,10 @@ var loggeduser=getCookie("username");
                     echo "<legend>There are no ads posted by you</legend>";
                 } 
             
+         }
+          if(count($myprofile)!=1){
+            echo "<div style=height:50px></div>";
+            echo "<h1>Invalid username or password</h1>";
+        }
+    
 ?>
