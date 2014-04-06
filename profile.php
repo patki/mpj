@@ -58,27 +58,26 @@ var loggeduser=getCookie("username");
     <a class="brand" href="index.php">ezeefieds</a>
       <ul class="nav navbar-nav">
         <li class=""><a href="index.php">Home</a></li>
-        
-        
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
-       <li><a href="postcategorypage.html">Post ad</a></li></ul>
+       <li><a href="postcategorypage.html">Post ad</a></li>
+       <li><a href="index.php">Browse ad's</a></li>
+      </ul>
         <ul class="nav navbar-nav navbar-right">
         <!--<input type="hidden" value="//<?php //echo $category=$_GET[id];?>">-->
         <li><a href="/search.php?mid=mostrecent">Most Recent</a></li>
         <li><a href="/search.php?mid=low_to_high">Price:Low to high</a></li>
         <li><a href="/search.php?mid=high_to_low">Price:High to low</a></li>
         </ul>
-        <ul class="nav navbar-nav navbar-right">
-        <li></li>
-        <li></li>
-        <li><a href="index.php">Browse ad's</a></li>      
+        <ul class="nav navbar-nav navbar-right">      
         <li><a href="profile.php"><?php echo $_COOKIE['username']?></a></li>
         </ul>
     
    </div><!-- /.container-fluid -->
   </nav>
+<div class="row"></div>
+<div class="row"></div>
 <div class="tabbable tabs-left">
     <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
         <li class="active"><a href="#personal" data-toggle="tab">Personal info</a></li>
