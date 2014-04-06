@@ -1,6 +1,6 @@
 
 <?php
-include "default.html";
+include "nav.html";
     try {
           
           $conn = new PDO ( "sqlsrv:server = tcp:pocxo8zlbf.database.windows.net,1433; Database =classifieds", "sambaridly", "Butter@dosa112");      
