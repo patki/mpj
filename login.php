@@ -1,6 +1,6 @@
 
 <?php
-
+include "default.html";
     try {
           
           $conn = new PDO ( "sqlsrv:server = tcp:pocxo8zlbf.database.windows.net,1433; Database =classifieds", "sambaridly", "Butter@dosa112");      
@@ -10,12 +10,17 @@
     catch(Exception $e){
         die(var_dump($e));
     }
-	  $check=false;
-    $sql_select = "SELECT password FROM registration where email='".$_GET['uid']."'AND password='".$_GET['password']."';";
-    $stmt = $conn->query($sql_select);
-    $registrant = $stmt->fetch(); 
-    if($registrant ==$_GET['password']){
-      $check=true;
-		  
-	  }
+	$cookieid=$_COOKIE['username'];
+    $email=$_POST['email'];
+    $password=$_POST['password'];
+         $sql_select = "SELECT username FROM registration where email='$email'and password='$password'";
+         $stmt = $conn->query($sql_select);
+         $myprofile = $stmt->fetchAll();
+         if(count($myprofile)>0){
+            header('Location: http://ezeefieds.azurewebsites.net');
+        }
+        else{
+            echo "<div style=height:50px></div>";
+            echo "<h2>Invalid username or password</h2>";
+        }
 ?>

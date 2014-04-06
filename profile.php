@@ -14,12 +14,8 @@ include "nav.html";
 	
      $cookieid=$_COOKIE['username'];
    // echo $uid=getCookie("username");
-    $email=$_POST['email'];
-    $password=$_POST['password'];
-         $sql_select = "SELECT username FROM registration where email='$email'and password='$password'";
-         $stmt = $conn->query($sql_select);
-         $myprofile = $stmt->fetchAll();
-        if(count($myprofile)==1){
+    //$email=$_POST['email'];
+    //$password=$_POST['password'];
                 $sql_select = "SELECT * FROM adposts where email='$cookieid'";
                 $stmt = $conn->query($sql_select);
                 $adposts = $stmt->fetchAll(); 
@@ -52,10 +48,4 @@ include "nav.html";
                     echo "<legend>There are no ads posted by you</legend>";
                 } 
             
-         }
-          if(count($myprofile)!=1){
-            echo "<div style=height:50px></div>";
-            echo "<h1>Invalid username or password</h1>";
-        }
-    
 ?>
