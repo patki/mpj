@@ -16,7 +16,7 @@ include "nav.html";
          $sql_select = "SELECT username FROM registration where email='$email'and password='$password'";
          $stmt = $conn->query($sql_select);
          $myprofile = $stmt->fetchAll();
-         if(count($myprofile)>0){
+         if(count($myprofile)==1){
             header('Location: http://ezeefieds.azurewebsites.net');
         }
         else{
