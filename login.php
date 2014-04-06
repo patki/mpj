@@ -17,7 +17,9 @@ include "nav.html";
          $stmt = $conn->query($sql_select);
          $myprofile = $stmt->fetchAll();
          if(count($myprofile)==1){
-            header('Location: http://ezeefieds.azurewebsites.net/profile.php?id='.$cookieid);
+            echo "<div style=height:50px></div>";
+            echo "<h2>Welcome</h2>".$cookieid;
+            //header('Location: http://ezeefieds.azurewebsites.net/profile.php?id='.$cookieid);
         }
         else{
             echo "<div style=height:50px></div>";
