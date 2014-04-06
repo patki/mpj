@@ -76,8 +76,7 @@ var loggeduser=getCookie("username");
     
    </div><!-- /.container-fluid -->
   </nav>
-<div class="row"></div>
-<div class="row"></div>
+<div style="height:100px"></div>
 <div class="tabbable tabs-left">
     <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
         <li class="active"><a href="#personal" data-toggle="tab">Personal info</a></li>
