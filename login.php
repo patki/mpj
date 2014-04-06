@@ -17,7 +17,7 @@ include "nav.html";
          $stmt = $conn->query($sql_select);
          $myprofile = $stmt->fetchAll();
          if(count($myprofile)==1){
-            header('Location: http://ezeefieds.azurewebsites.net');
+            header('Location: http://ezeefieds.azurewebsites.net/index.php');
         }
         else{
             echo "<div style=height:50px></div>";

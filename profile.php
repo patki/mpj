@@ -76,6 +76,7 @@ var loggeduser=getCookie("username");
     
    </div><!-- /.container-fluid -->
   </nav>
+<div class="container-narrow">
 <div style="height:100px"></div>
 <div class="tabbable tabs-left">
     <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
@@ -115,18 +116,8 @@ var loggeduser=getCookie("username");
     </div>
     </div>
 </div>
-
-    
 </div>
-
-
-
-
-
-
-
-
-
+</div>
 
 <?php
     try {
@@ -142,9 +133,6 @@ var loggeduser=getCookie("username");
     }
 	
      $cookieid=$_COOKIE['username'];
-   // echo $uid=getCookie("username");
-    //$email=$_POST['email'];
-    //$password=$_POST['password'];
                 $sql_select = "SELECT * FROM adposts where email='$cookieid'";
                 $stmt = $conn->query($sql_select);
                 $adposts = $stmt->fetchAll(); 
