@@ -48,11 +48,6 @@
     <script type="text/javascript" src="js/cookies.js"></script>
 <script>
 var loggeduser=getCookie("username");
-function del_cookie(name) {
-  //alert("entered del");
-    document.cookie = name +
-    '=; expires=Thu, 01-Jan-70 00:00:01 GMT;';
-    }
 </script>
   </head>
 
@@ -79,7 +74,7 @@ function del_cookie(name) {
         <li></li>
         <li><a href="index.php">Browse ad's</a></li>      
         <li><a href="profile.php"><?php echo $_COOKIE['username']?></a></li>
-         <li><input type="button" onClick="del_cookie();">Logout</li>
+         <li><a href="logout.php?id=logout">Logout</a></li>
         </ul>
     
    </div><!-- /.container-fluid -->
