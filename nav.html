@@ -48,6 +48,11 @@
     <script type="text/javascript" src="js/cookies.js"></script>
 <script>
 var loggeduser=getCookie("username");
+function del_cookie(name) {
+  //alert("entered del");
+    document.cookie = name +
+    '=; expires=Thu, 01-Jan-70 00:00:01 GMT;';
+    }
 </script>
   </head>
 
