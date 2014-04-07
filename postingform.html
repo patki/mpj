@@ -164,15 +164,9 @@ if($_COOKIE['username']!=NULL) {
     $sql_select = "SELECT * FROM registration where email='$cookie'";
          $stmt = $conn->query($sql_select);
          $adposts = $stmt->fetchAll();
-    echo count($adposts);
-
-    foreach($adposts as $adpost) {
-            echo "<input type=email name=email value='".$adpost['email']."' required>";
-            echo "<input type=text name=contact_name value='".$adpost['username']."' required>";
-            echo "<input type=text name=phoneno value='".$adpost['phoneno']."' required>";
-            echo "<input type=text name=location value='".$adpost['location']."' required>";
-            
-        }
+         if (count($adposts)==1) {
+           echo "itworls";
+         }
   
 }
 
