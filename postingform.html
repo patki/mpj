@@ -56,8 +56,11 @@
        <li></li>
         <li></li>
         <li><a href="index.php">Browse ad's</a></li>  
-        <li><a href="profile.php"><?php echo $_COOKIE['username']?></a></li>    
-        
+        <li><a href="profile.php"><?php 
+        if($_COOKIE['username']!=NULL)
+        {echo $_COOKIE['username'];}
+        else{ echo "Hi,Guest";}?></a></li>
+         <li><a href="logout.php?id=logout">Logout</a></li>
       </ul>
     
   </div><!-- /.container-fluid -->
