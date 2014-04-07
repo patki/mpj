@@ -59,12 +59,12 @@ $cookieid=$_COOKIE['username'];
 else{
  $sql_select="SELECT contact_name,email,phoneno,location From registration where email='$cookieid' ";
  $stmt = $conn->query($sql_select);
- $userdetail = $stmt->fetchAll();
- foreach($userdetail as $userdetails) {
-     $contact_name =$userdetails['contact_name'];
-     $email = $userdetails['email'];
-     $phoneno = $userdetails['phoneno'];
-     $location = $userdetails['location'];
+ $adposts = $stmt->fetchAll();
+ foreach($adposts as $adpost) {
+            echo "<td>".$adpost['contact_name']."</td>";
+            echo "<td>".$adpost['phoneno']."</td>";
+             echo "<td>".$adpost['email']."</td>";
+            echo "<td>".$adpost['location']."</td></tr>";
         }
 
    if(!empty($_POST['choosen_category'])&&!empty($_POST['adtitle'])) {
