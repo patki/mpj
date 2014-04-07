@@ -169,10 +169,10 @@ if($_COOKIE['username']!=NULL) {
     echo "<table class='table table-bordered'>";
     foreach($adposts as $adpost) {
 
-            echo "cname".$cnmae=$adpost['email'];
-             echo "<tr><td>".$adpost['username']."</td>";
+            echo "<input type=hidden name=email value=".$adpost['email']." required>";
+             echo "<td>".$adpost['username']."</td>";
             echo "<td>".$adpost['phoneno']."</td>";
-            echo "<td>".$adpost['location']."</td></tr>";
+            echo "<td>".$adpost['location']."</td>";
         }
   
 }
