@@ -53,6 +53,7 @@ function hide(){
     document.getElementById('show_hide').style.visibility = 'hidden';
 }
 </script>
+  <script type="text/javascript" src="js/cookies.js"></script>
 
 
   </head>
@@ -70,6 +71,7 @@ function hide(){
         <li><a href="login.html">Sign in</a></li>
         <li><a href="postcategorypage.html">Post ad</a></li>
         <li><a href="profile.php"><?php 
+
         if($_COOKIE['username']!=NULL)
         {echo $_COOKIE['username'];}
         else{ echo "Hi,Guest";}?></a></li>
