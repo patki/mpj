@@ -91,6 +91,7 @@
       <input type="checkbox" id="inputEmail" value="free" name="price" > Free
     </div>
   </div>
+<p></p>
 <?php  if($_COOKIE['username']==NULL){
 echo "<legend><b>Seller Information</b></legend>
 <div class=control-group>
@@ -154,15 +155,10 @@ echo "<legend><b>Seller Information</b></legend>
         <option value= West Bengal >West Bengal</option>
       </select>
     </div>
-  </div>
-  <div class=control-group>
-    <div class=controls; offset2>
-      <button type=submit class=btn  btn-success>Submit</button>
-    </div>
   </div>";
 }
 if ($_COOKIE['username']!=NULL) {
-    $sql_select = "SELECT * FROM registration where email='".$_COOKIE['username']."'";
+    $sql_select = "SELECT * FROM registration where email='$cookie'";
     $stmt = $conn->query($sql_select);
     $adposts = $stmt->fetchAll(); 
     foreach($adposts as $adpost) {
@@ -170,16 +166,13 @@ if ($_COOKIE['username']!=NULL) {
       $username=$adpost['username'];
       $phoneno=$adpost['phoneno'];
       $location=$adpost['location'];
-    }
-  echo "<input type=hidden id=inputEmail placeholder='' name=contact_name value=".$username." required>
-      <input type=hidden id=inputEmail placeholder='' name=email value=".$email."required>
-      <input type=hidden id=inputPassword placeholder='' name=phoneno value=".$phoneno." required>
-      <input type=hidden class= span3  name= location value=".$location." required> 
-      <div class=control-group>
-    <div class=controls; offset2>
-      <button type=submit class=btn  btn-success>Submit</button>
-    </div>
-  </div>";
+        }
+  echo "<input type=hidden id=inputEmail placeholder='' name=contact_name required>
+        <input type=hidden id=inputEmail placeholder='' name=email required>
+        <input type=hidden id=inputPassword placeholder='' name=phoneno required>
+        <select class= span3  name= location  required></select>
+
+  ";
   
 }
 
