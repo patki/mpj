@@ -22,10 +22,9 @@ try {
     $adposts = $stmt->fetchAll(); 
     echo "<table class='table table-bordered'>";
     foreach($adposts as $adpost) {
-            echo "<tr><td>".$adpost['adtitle']."</td>";
-            echo "<td>".$adpost['description']."</td>";
-            echo "<td>".$adpost['price']."</td>";
-            echo "<td>".$adpost['contact_name']."</td>";
+
+            echo "cname".$cnmae=$adpost['email'];
+             echo "<td>".$adpost['username']."</td>";
             echo "<td>".$adpost['phoneno']."</td>";
             echo "<td>".$adpost['location']."</td></tr>";
         }
