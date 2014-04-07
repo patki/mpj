@@ -16,7 +16,8 @@ include "postingform.html";
         die(var_dump($e));
     }
 
-    //
+    if($_COOKIE['username']==NULL){
+
     if(!empty($_POST['choosen_category'])&&!empty($_POST['adtitle'])&&!empty($_POST['contact_name'])&&!empty($_POST['phoneno'])) {
     try {
         $choosen_category = $_POST['choosen_category'];
@@ -51,8 +52,49 @@ include "postingform.html";
         catch(Exception $e) {
         die(var_dump($e));
     }
+}
     echo "<h3>Your ad posted successfully!</h3>";
+}
+$cookieid=$_COOKIE['username'];
+else{
+ $sql_select="SELECT contact_name,email,phoneno,location From registation where email='$cookieid' ";
+ $stmt = $conn->query($sql_select);
+ $userdetails = $stmt->fetchAll();
+ $contact_name =$userdetails['contact_name'];
+ $email = $userdetails['email'];
+ $phoneno = $userdetails['phoneno'];
+ $location = $userdetails['location'];
+   if(!empty($_POST['choosen_category'])&&!empty($_POST['adtitle'])) {
+    try {
+        $choosen_category = $_POST['choosen_category'];
+        $adtitle = $_POST['adtitle'];
+        $topic_category = $_POST['topic_category'];
+        $description = $_POST['description'];
+        $price = $_POST['price'];
+        $timedate = date("Y-m-d H:i:s");
+          
+        // Insert data
+
+        $sql_insert = "INSERT INTO adposts (choosen_category,adtitle,topic_category,description,price,contact_name,email,phoneno,location,timedate) 
+                   VALUES (?,?,?,?,?,?,?,?,?,?)";
+        $stmt = $conn->prepare($sql_insert);
+        $stmt->bindValue(1, $choosen_category);
+        $stmt->bindValue(2, $adtitle);
+        //$stmt->bindValue(3, $photo);
+        $stmt->bindValue(3, $topic_category);
+        $stmt->bindValue(4, $description);
+        $stmt->bindValue(5, $price);
+        $stmt->bindValue(6, $contact_name);
+        $stmt->bindValue(7, $email);
+        $stmt->bindValue(8, $phoneno);
+        $stmt->bindValue(9, $location);
+        $stmt->bindValue(10,$timedate);
+        $stmt->execute();
+       }
+        catch(Exception $e) {
+        die(var_dump($e));
     }
- 
-  
+}
+    echo "<h3>Your ad posted successfully!</h3>";
+}  
 ?>
