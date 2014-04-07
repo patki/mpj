@@ -54,10 +54,10 @@ include "postingform.html";
     }
 }
     echo "<h3>Your ad posted successfully!</h3>";
-}
+    }
 $cookieid=$_COOKIE['username'];
 else{
- $sql_select="SELECT contact_name,email,phoneno,location From registation where email='$cookieid' ";
+ $sql_select="SELECT contact_name,email,phoneno,location From registration where email='$cookieid' ";
  $stmt = $conn->query($sql_select);
  $userdetails = $stmt->fetchAll();
  $contact_name =$userdetails['contact_name'];
