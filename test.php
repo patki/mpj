@@ -19,13 +19,15 @@ try {
     echo "<legend>Ads related to :  ".$category."</legend>";
     $sql_select = "SELECT * FROM registration where email='$cookie'";
     $stmt = $conn->query($sql_select);
-   echo $adposts = $stmt->fetch('contact_name'); 
-    echo "<tr><td>".$adposts['adtitle']."</td>";
-            echo "<td>".$adposts['description']."</td>";
-            echo "<td>".$adposts['price']."</td>";
-            echo "<td>".$adposts['contact_name']."</td>";
-            echo "<td>".$adposts['phoneno']."</td>";
-            echo "<td>".$adposts['location']."</td></tr>";
+    $adposts = $stmt->fetchAll(); 
+    foreach($adposts as $adpost) {
+            echo "cnme" .$contact_name=$adpost['adtitle'];
+            echo "<td>".$adpost['description']."</td>";
+            echo "<td>".$adpost['price']."</td>";
+            echo "<td>".$adpost['contact_name']."</td>";
+            echo "<td>".$adpost['phoneno']."</td>";
+            echo "<td>".$adpost['location']."</td></tr>";
+        }
   
 echo "</div>";
 echo "</div>";
