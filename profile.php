@@ -47,6 +47,7 @@ include "nav.html";
                     echo "</div>";
                 }
                 else{
+                    echo "<div class=container-narrow>";
                     echo "<div style=height:50px></div>";
                     echo "<legend>There are no ads posted by you</legend>";
                 } 

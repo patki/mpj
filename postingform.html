@@ -27,14 +27,15 @@
     <a class="brand" href="index.php">ezeefieds</a>
       <ul class="nav navbar-nav">
         <li class=""><a href="index.php">Home</a></li>
+        <li><a href="postcategorypage.html">Post ad</a></li>
+       <li></li>
+        <li></li>
+        <li><a href="index.php">Browse ad's</a></li> 
         
       </ul>
       
-      <ul class="nav navbar-nav navbar-right">
-         <li><a href="postcategorypage.html">Post ad</a></li>
-       <li></li>
-        <li></li>
-        <li><a href="index.php">Browse ad's</a></li>  
+      <ul class="nav navbar-nav pull-right">
+          
         <li><a href="profile.php"><?php 
         if($_COOKIE['username']!=NULL)
         {echo $_COOKIE['username'];}
@@ -64,13 +65,6 @@
       <input type="text" id="inputEmail" placeholder="" name="adtitle">
     </div>
   </div>
-  <!--<div class="control-group">
-   <label class="control-label" for="inputEmail">Photos</label>
-    <div class="controls">
-       <a class="btn btn-success" href="registration.html">Add photos</a>
-    </div>
-  </div>-->
- 
   <div class="control-group">
     <label class="control-label" for="inputEmail">Type</label>
     <div class="controls">
@@ -162,8 +156,6 @@ echo "<legend><b>Seller Information</b></legend>
       </select>
     </div>
   </div>";
-
-
 }?>
 
   <div class="control-group">

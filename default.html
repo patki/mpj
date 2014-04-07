@@ -64,17 +64,20 @@ function hide(){
       <ul class="nav navbar-nav">
         <li class=""><a href="index.php">Home</a></li>
         <li><a href="registration.html">Create Account</a></li>
+        <li><a href="login.html">Sign in</a></li>
+        <li><a href="postcategorypage.html">Post ad</a></li>
         
       </ul>
       
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="login.html">Sign in</a></li>
-        <li><a href="postcategorypage.html">Post ad</a></li>
-        <li><a href="profile.php"><?php 
-
-        if($_COOKIE['username']!=NULL)
-        {echo $_COOKIE['username'];}
-        else{ echo "Hi,Guest";}?></a></li>
+      <ul class="nav navbar-nav pull-right">
+       <li><a href="profile.php">
+        <?php 
+        if($_COOKIE['username']!=NULL){
+        echo $_COOKIE['username'];
+      }
+        else
+        echo "Hi,Guest";
+        ?></a></li>
         <li><a href="logout.php?id=logout">Logout</a></li>
        
       </ul>
