@@ -163,7 +163,7 @@ if($_COOKIE['username']!=NULL) {
     $stmt = $conn->query($sql_select);
     $adposts = $stmt->fetchAll(); 
     foreach($adposts as $adpost) {
-      $email=$adpost['email'];
+     echo $email=$adpost['email'];
       $username=$adpost['username'];
       $phoneno=$adpost['phoneno'];
       $location=$adpost['location'];
