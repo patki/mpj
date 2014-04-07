@@ -21,7 +21,7 @@ try {
     $stmt = $conn->query($sql_select);
     $adposts = $stmt->fetchAll(); 
     foreach($adposts as $adpost) {
-            echo "cnme" .$contact_name=$adpost['adtitle'];
+            echo "<tr><td>".$adpost['adtitle']."</td>";
             echo "<td>".$adpost['description']."</td>";
             echo "<td>".$adpost['price']."</td>";
             echo "<td>".$adpost['contact_name']."</td>";
