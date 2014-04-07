@@ -154,6 +154,11 @@ echo "<legend><b>Seller Information</b></legend>
         <option value= West Bengal >West Bengal</option>
       </select>
     </div>
+  </div>
+  <div class=control-group>
+    <div class=controls; offset2>
+      <button type=submit class=btn  btn-success>Submit</button>
+    </div>
   </div>";
 }
 if ($_COOKIE['username']!=NULL) {
@@ -169,7 +174,12 @@ if ($_COOKIE['username']!=NULL) {
   echo "<input type=hidden id=inputEmail placeholder='' name=contact_name value=".$username." required>
       <input type=hidden id=inputEmail placeholder='' name=email value=".$email."required>
       <input type=hidden id=inputPassword placeholder='' name=phoneno value=".$phoneno." required>
-      <input type=hidden class= span3  name= location value=".$location." required> ";
+      <input type=hidden class= span3  name= location value=".$location." required> 
+      <div class=control-group>
+    <div class=controls; offset2>
+      <button type=submit class=btn  btn-success>Submit</button>
+    </div>
+  </div>";
   
 }
 
