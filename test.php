@@ -19,7 +19,7 @@ try {
     echo "<legend>Ads related to :  ".$category."</legend>";
     $sql_select = "SELECT * FROM registration where email='$cookie'";
     $stmt = $conn->query($sql_select);
-    $adposts = $stmt->fetchAll(); 
+   echo $adposts = $stmt->fetch('contact_name'); 
     echo "<tr><td>".$adposts['adtitle']."</td>";
             echo "<td>".$adposts['description']."</td>";
             echo "<td>".$adposts['price']."</td>";
