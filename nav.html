@@ -47,7 +47,7 @@
     </style>
     <script type="text/javascript" src="js/cookies.js"></script>
 <script>
-var loggeduser=getCookie("username");
+//var loggeduser=getCookie("username");
 </script>
   </head>
 
@@ -64,7 +64,6 @@ var loggeduser=getCookie("username");
       <ul class="nav navbar-nav navbar-right">
        <li><a href="postcategorypage.html">Post ad</a></li></ul>
         <ul class="nav navbar-nav navbar-right">
-        <!--<input type="hidden" value="//<?php //echo $category=$_GET[id];?>">-->
         <li><a href="/search.php?mid=mostrecent">Most Recent</a></li>
         <li><a href="/search.php?mid=low_to_high">Price:Low to high</a></li>
         <li><a href="/search.php?mid=high_to_low">Price:High to low</a></li>
@@ -73,7 +72,10 @@ var loggeduser=getCookie("username");
         <li></li>
         <li></li>
         <li><a href="index.php">Browse ad's</a></li>      
-        <li><a href="profile.php"><?php echo $_COOKIE['username']?></a></li>
+        <li><a href="profile.php"><?php 
+        if($_COOKIE['username']!=NULL)
+        {echo $_COOKIE['username'];}
+        else{ echo "Hi,Guest";}?></a></li>
          <li><a href="logout.php?id=logout">Logout</a></li>
         </ul>
     

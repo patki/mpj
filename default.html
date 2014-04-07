@@ -69,7 +69,12 @@ function hide(){
       <ul class="nav navbar-nav navbar-right">
         <li><a href="login.html">Sign in</a></li>
         <li><a href="postcategorypage.html">Post ad</a></li>
-        <li><a href="profile.php"><?php echo $_COOKIE['username']?></a></li>
+        <li><a href="profile.php"><?php 
+        if($_COOKIE['username']!=NULL)
+        {echo $_COOKIE['username'];}
+        else{ echo "Hi,Guest";}?></a></li>
+        <li><a href="logout.php?id=logout">Logout</a></li>
+       
       </ul>
     
   </div><!-- /.container-fluid -->
