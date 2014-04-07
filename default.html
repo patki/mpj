@@ -71,11 +71,11 @@ function hide(){
         <li><a href="login.html">Sign in</a></li>
         <li><a href="postcategorypage.html">Post ad</a></li>
         <li><a href="profile.php"><?php 
-
-        if($_COOKIE['username']!=NULL)
-        {echo $_COOKIE['username'];}
+        if($_COOKIE['username']!=NULL) {
+        echo $_COOKIE['username'];
+        echo " <li><a href='logout.php?id=logout'>Logout</a></li> ";
+        }
         else{ echo "Hi,Guest";}?></a></li>
-        <li><a href="logout.php?id=logout">Logout</a></li>
        
       </ul>
     
