@@ -12,14 +12,13 @@ include "nav.html";
         die(var_dump($e));
     }
 	
-     $cookieid=$_COOKIE['username'];
-   // echo $uid=getCookie("username");
     $email=$_POST['email'];
     $password=$_POST['password'];
          $sql_select = "SELECT username FROM registration where email='$email'and password='$password'";
          $stmt = $conn->query($sql_select);
          $myprofile = $stmt->fetchAll();
         if(count($myprofile)==1){
+                $cookieid=$_COOKIE['username'];
                 $sql_select = "SELECT * FROM adposts where email='$cookieid'";
                 $stmt = $conn->query($sql_select);
                 $adposts = $stmt->fetchAll(); 
@@ -54,10 +53,9 @@ include "nav.html";
             
          }
           if(count($myprofile)!=1){
-            setcookie("username", "", time()-3600);
-                    
-            echo "<div style=height:50px></div>";
-            echo "<h1>Invalid username or password</h1>";
+            header('Location: /logout.php');
+
+            
         }
     
 ?>
