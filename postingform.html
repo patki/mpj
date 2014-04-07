@@ -156,7 +156,19 @@ echo "<legend><b>Seller Information</b></legend>
       </select>
     </div>
   </div>";
-}?>
+}
+if ($_COOKIE['username']!=NULL) {
+  echo "<input type=hidden id=inputEmail placeholder='' name=contact_name required>
+        <input type=hidden id=inputEmail placeholder='' name=email required>
+        <input type=hidden id=inputPassword placeholder='' name=phoneno required>
+        <select class= span3  name= location  required></select>
+
+  ";
+  
+}
+
+
+?>
 
   <div class="control-group">
     <div class="controls; offset2">
