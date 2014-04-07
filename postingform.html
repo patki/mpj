@@ -170,7 +170,7 @@ if ($_COOKIE['username']!=NULL) {
   echo "<input type=hidden id=inputEmail placeholder='' name=contact_name value=<?php echo $username; ?> required>
         <input type=hidden id=inputEmail placeholder='' name=email value=<?php echo $email; ?>required>
         <input type=hidden id=inputPassword placeholder='' name=phoneno value=<?php echo $phoneno; ?> required>
-        <select class= span3  name= location value=<?php echo $location; ?> required></select>
+        <select type=hidden class= span3  name= location value=<?php echo $location; ?> required></select>
 
   ";
   
