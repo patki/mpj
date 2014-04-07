@@ -159,20 +159,18 @@ echo "<legend><b>Seller Information</b></legend>
 }
 if($_COOKIE['username']!=NULL) {
   echo  $cookie=$_COOKIE['username'];
-    echo "<div class=container-narrow>";
-    echo "<div class=panel panel-default>";
     echo "<div style=height:50px></div>";
    
     $sql_select = "SELECT * FROM registration where email='$cookie'";
     $stmt = $conn->query($sql_select);
     $adposts = $stmt->fetchAll(); 
-    echo "<table class='table table-bordered'>";
     foreach($adposts as $adpost) {
 
-            echo "<input type=hidden name=email value=".$adpost['email']." required>";
-             echo "<td>".$adpost['username']."</td>";
-            echo "<td>".$adpost['phoneno']."</td>";
-            echo "<td>".$adpost['location']."</td>";
+            echo "<input type=email name=email value=".$adpost['email']." required>";
+            echo "<input type=text name=contact_name value=".$adpost['username']." required>";
+            echo "<input type=text name=phoneno value=".$adpost['phoneno']." required>";
+            echo "<input type=text name=location value=".$adpost['email']." required>";
+            
         }
   
 }
