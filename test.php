@@ -12,7 +12,7 @@ try {
     catch(Exception $e){
         die(var_dump($e));
     }
-    $cookie=$_COOKIE['username'];
+   echo  $cookie=$_COOKIE['username'];
     echo "<div class=container-narrow>";
     echo "<div class=panel panel-default>";
     echo "<div style=height:50px></div>";
@@ -20,6 +20,7 @@ try {
     $sql_select = "SELECT * FROM registration where email='$cookie'";
     $stmt = $conn->query($sql_select);
     $adposts = $stmt->fetchAll(); 
+    echo "<table class='table table-bordered'>";
     foreach($adposts as $adpost) {
             echo "<tr><td>".$adpost['adtitle']."</td>";
             echo "<td>".$adpost['description']."</td>";
