@@ -91,7 +91,6 @@
       <input type="checkbox" id="inputEmail" value="free" name="price" > Free
     </div>
   </div>
-<p></p>
 <?php  if($_COOKIE['username']==NULL){
 echo "<legend><b>Seller Information</b></legend>
 <div class=control-group>
@@ -167,12 +166,10 @@ if ($_COOKIE['username']!=NULL) {
       $phoneno=$adpost['phoneno'];
       $location=$adpost['location'];
     }
-  echo "<input type=hidden id=inputEmail placeholder='' name=contact_name value=<?php echo $username; ?> required>
-        <input type=hidden id=inputEmail placeholder='' name=email value=<?php echo $email; ?>required>
-        <input type=hidden id=inputPassword placeholder='' name=phoneno value=<?php echo $phoneno; ?> required>
-        <input type=hidden class= span3  name= location value=<?php echo $location; ?> required>
-
-  ";
+  echo "<input type=hidden id=inputEmail placeholder='' name=contact_name value=".$email." required>
+      <input type=hidden id=inputEmail placeholder='' name=email value=".$username."required>
+      <input type=hidden id=inputPassword placeholder='' name=phoneno value=".$phoneno." required>
+      <input type=hidden class= span3  name= location value=".$location." required> ";
   
 }
 
