@@ -157,6 +157,7 @@ echo "<legend><b>Seller Information</b></legend>
     </div>
   </div>";
 }
+$cookie=$_COOKIE['username'];
 if ($_COOKIE['username']!=NULL) {
     $sql_select = "SELECT * FROM registration where email='$cookie'";
     $stmt = $conn->query($sql_select);
