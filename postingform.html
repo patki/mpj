@@ -169,10 +169,10 @@ if ($_COOKIE['username']!=NULL) {
       $phoneno=$adpost['phoneno'];
       $location=$adpost['location'];
         }?>
-        <input type="hidden" id="inputEmail" placeholder='' name="contact_name" required>
-        <input type="hidden" id="inputEmail" placeholder='' name="email" required>
-        <input type="hidden" id="inputPassword" placeholder='' name="phoneno" required>
-        <input type="hidden"  name= "location"  required>
+        <input type="text" id="inputEmail" placeholder='' name="contact_name" required>
+        <input type="email" id="inputEmail" placeholder='' name="email" required>
+        <input type="password" id="inputPassword" placeholder='' name="phoneno" required>
+        <input type="text"  name= "location"  required>
 <?php } ?>
 
   <div class="control-group">
