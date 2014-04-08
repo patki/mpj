@@ -19,16 +19,8 @@ try {
     echo "<legend>Ads related to :  ".$category."</legend>";
     $sql_select = "SELECT * FROM registration where email='$cookie'";
     $stmt = $conn->query($sql_select);
-    $adposts = $stmt->fetchAll(); 
-    echo "<table class='table table-bordered'>";
-    foreach($adposts as $adpost) {
-
-            echo "cname".$adpost['email'];
-             echo "<td>".$adpost['username']."</td>";
-            echo "<td>".$adpost['phoneno']."</td>";
-           $cnmae=echo $adpost['location'];
-        }
-  echo $cnmae;
+    echo $adposts = $stmt->fetch('username'); 
+  
 echo "</div>";
 echo "</div>";
 echo "</body>";
