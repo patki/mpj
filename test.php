@@ -23,10 +23,10 @@ try {
     echo "<table class='table table-bordered'>";
     foreach($adposts as $adpost) {
 
-            echo "cname".$cnmae=$adpost['email'];
+            echo "cname".$adpost['email'];
              echo "<td>".$adpost['username']."</td>";
             echo "<td>".$adpost['phoneno']."</td>";
-            echo "<td>".$adpost['location']."</td></tr>";
+            echo "<td>".$cnmae=$adpost['location']."</td></tr>";
         }
   echo $cnmae;
 echo "</div>";
