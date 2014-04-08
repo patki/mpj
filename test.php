@@ -20,7 +20,7 @@ try {
     $sql_select = "SELECT * FROM registration where email='$cookie'";
     $stmt = $conn->query($sql_select);
     $adposts = $stmt->fetchAll();
-    echo $adposts[1]; 
+    echo $adposts['location']; 
   
 echo "</div>";
 echo "</div>";
