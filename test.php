@@ -28,7 +28,7 @@ try {
             echo "<td>".$adpost['phoneno']."</td>";
             echo "<td>".$adpost['location']."</td></tr>";
         }
-  
+  echo $cnmae;
 echo "</div>";
 echo "</div>";
 echo "</body>";
