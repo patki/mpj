@@ -16,6 +16,16 @@ try {
     echo "<div class=container-narrow>";
     echo "<div class=panel panel-default>";
     echo "<div style=height:50px></div>";
+    if($_COOKIE['username']==NULL){
+          echo "user not logged in\n";
+          echo "i am ending ...\n";
+        }
+    else {
+      echo "user logged in \n";
+      var_dump($_COOKIE);
+      echo "\n";
+      }
+    $cookie=$_COOKIE['username'];
     echo "<legend>Ads related to :  ".$category."</legend>";
     $sql_select = "SELECT * FROM registration where email='$cookie'";
     $stmt = $conn->query($sql_select);
@@ -24,8 +34,7 @@ try {
      echo $adpost['username'];
      echo $adpost['location'];
      echo $adpost['phoneno'];
-  }
-  echo $username;
+  } 
 echo "</div>";
 echo "</div>";
 echo "</body>";
