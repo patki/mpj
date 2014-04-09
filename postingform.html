@@ -92,7 +92,10 @@
     </div>
   </div>
 <p></p>
-<?php  if($_COOKIE['username']==NULL){
+<?php 
+echo "here 1 ..cookie: "+$_COOKIE['username']+"...<br>";
+if($_COOKIE['username']==NULL){
+  echo "user not logged in <br>";
 echo "<legend><b>Seller Information</b></legend>
 <div class=control-group>
    <label class=control-label for=inputEmail>Contact name*</label>
@@ -156,8 +159,9 @@ echo "<legend><b>Seller Information</b></legend>
       </select>
     </div>
   </div>";
+  echo "<br>i am ending ...<br>";
 }
-if($_COOKIE['username']!=NULL) {
+else {
   $cookie=$_COOKIE['username'];
     $sql_select = "SELECT * FROM registration where email='$cookie'";
     $stmt = $conn->query($sql_select);
