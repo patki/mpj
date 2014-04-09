@@ -163,19 +163,14 @@ if($_COOKIE['username']!=NULL) {
     $stmt = $conn->query($sql_select);
     $adposts = $stmt->fetchAll();
     foreach ($adposts as $adpost) {
-      echo $adpost['username'];
-      echo $adpost['location'];
-      $adpost['phoneno'];
-      $adpost['email'];
-  
-    echo "<div class=control-group>
+   echo "<div class=control-group>
    <label class=control-label for=inputEmail>Contact name*</label>
      <div class=controls>
       <input type=text id=inputEmail placeholder='' name=contact_name value='".$adpost['username']."' required>
     </div>
   </div>
   <div class=control-group>
-<label class=control-label for=inputEmail>Email*</label>
+  <label class=control-label for=inputEmail>Email*</label>
     <div class=controls>
       <input type=email id=inputEmail placeholder='' name=email value='".$adpost['email']."' required>
     </div>
@@ -190,7 +185,7 @@ if($_COOKIE['username']!=NULL) {
   <div class=control-group>
    <label class=control-label for=inputEmail>Location*</label>
     <div class=controls>
-       <select class= span3  name= location value='".$adpost['location']."' required>
+       <input  type=text   name= location value='".$adpost['location']."' required>
         
     </div>
   </div>";
