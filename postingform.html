@@ -162,26 +162,26 @@ if($_COOKIE['username']!=NULL) {
     echo "<div class=control-group>
    <label class=control-label for=inputEmail>Contact name*</label>
      <div class=controls>
-      <input type=text id=inputEmail placeholder='' name=contact_name value=".$adpost['username']."required>
+      <input type=text id=inputEmail placeholder='' name=contact_name value='".$adpost['username']."' required>
     </div>
   </div>
   <div class=control-group>
 <label class=control-label for=inputEmail>Email*</label>
     <div class=controls>
-      <input type=email id=inputEmail placeholder='' name=email value=".$adpost['email']."required>
+      <input type=email id=inputEmail placeholder='' name=email value='".$adpost['email']."' required>
     </div>
   </div>
  
   <div class=control-group>
     <label class=control-label for=inputEmail>Phone No*</label>
     <div class=controls>
-      <input type=text id=inputPassword placeholder='' value=".$adpost['phoneno']." name=phoneno required>
+      <input type=text id=inputPassword placeholder='' value='".$adpost['phoneno']."' name=phoneno required>
     </div>
   </div>
   <div class=control-group>
    <label class=control-label for=inputEmail>Location*</label>
     <div class=controls>
-       <select class= span3  name= location value=".$adpost['location']." required>
+       <select class= span3  name= location value='".$adpost['location']."' required>
         
     </div>
   </div>";
