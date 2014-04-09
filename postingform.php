@@ -37,7 +37,6 @@ include "postingform.html";
         $stmt = $conn->prepare($sql_insert);
         $stmt->bindValue(1, $choosen_category);
         $stmt->bindValue(2, $adtitle);
-        //$stmt->bindValue(3, $photo);
 		$stmt->bindValue(3, $topic_category);
 		$stmt->bindValue(4, $description);
 		$stmt->bindValue(5, $price);
