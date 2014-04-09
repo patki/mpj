@@ -32,7 +32,7 @@ try {
     $adposts = $stmt->fetchAll();
     foreach ($adposts as $adpost) {
         ?>
-     <input type='text' value="<?php $adpost['username']?>";
+     <input type='text' value="<?php echo $adpost['username']?>";
      <?php   
   } 
 echo "</div>";
