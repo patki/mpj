@@ -47,14 +47,14 @@
 </nav>
 
 <?php 
-echo "<br>edanan rave ne amma <br>";
+echo "edanan rave ne amma \n";
 var_dump($_COOKIE);
 try
 {
-echo "here 1 ..cookie: "+$_COOKIE['username']+"...<br>";
+echo "\nhere 1 ..cookie: "+$_COOKIE['username'];
 if($_COOKIE['username']==NULL){
-  echo "user not logged in <br>";
-  echo "<br>i am ending ...<br>";
+  echo "user not logged in\n";
+  echo "i am ending ...\n";
 }
 else {
   $cookie=$_COOKIE['username'];
