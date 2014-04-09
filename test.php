@@ -24,6 +24,7 @@ try {
         # code...
     
     $stmt->bindValue($username,$adpost['username']);
+    $stmt->execute();
   }
   echo $username;
 echo "</div>";
