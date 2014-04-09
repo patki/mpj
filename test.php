@@ -31,9 +31,9 @@ try {
     $stmt = $conn->query($sql_select);
     $adposts = $stmt->fetchAll();
     foreach ($adposts as $adpost) {
-     echo "<input type='text' value='"+$adpost['username']+"'";
-     echo $adpost['location'];
-     echo $adpost['phoneno'];
+        ?>
+     <input type='text' value="<?php $adpost['username']?>";
+     <?php   
   } 
 echo "</div>";
 echo "</div>";
