@@ -21,10 +21,9 @@ try {
     $stmt = $conn->query($sql_select);
     $adposts = $stmt->fetchAll();
     foreach ($adposts as $adpost) {
-        # code...
-    
-    $stmt->bindValue($username,$adpost['username']);
-    $stmt->execute();
+     echo $adpost['username'];
+     echo $adpost['location'];
+     echo $adpost['phoneno'];
   }
   echo $username;
 echo "</div>";
