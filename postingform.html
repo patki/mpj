@@ -162,7 +162,9 @@ if($_COOKIE['username']!=NULL) {
     $sql_select = "SELECT * FROM registration where email='$cookie'";
     $stmt = $conn->query($sql_select);
     $adposts = $stmt->fetchAll();
+    var_dump($adposts);
     foreach ($adposts as $adpost) {
+      var_dump($adpost);
    echo "<div class=control-group>
    <label class=control-label for=inputEmail>Contact name*</label>
      <div class=controls>
