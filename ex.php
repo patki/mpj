@@ -11,14 +11,8 @@ if($_COOKIE['username']==NULL){
 else {
   echo "user logged in \n";
   $cookie=$_COOKIE['username'];
-    $sql_select = "SELECT * FROM registration where email='$cookie'";
-    $stmt = $conn->query($sql_select);
-    $adposts = $stmt->fetchAll();
-    var_dump($adposts);
-    foreach ($adposts as $adpost) {
-      var_dump($adpost);
-   echo "
-     <div class=control-group>
+  include "test.php";
+  /*   <!--<div class=control-group>
      <label class=control-label for=inputEmail>Contact name*</label>
        <div class=controls>
         <input type=text id=inputEmail placeholder='' name=contact_name value='"+$adpost['username']+"' required>
@@ -43,7 +37,7 @@ else {
          <input  type=text   name= location value='"+$adpost['location']+"' required>
           
       </div>
-    </div>";
+    </div>";*/
   }
 }
 
